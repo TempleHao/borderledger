@@ -1,378 +1,149 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#0a1221" />
-  <meta name="description" content="跨境账桥 BorderLedger：TikTok Shop 美国店铺与独立香港合作公司的收款、合规付款、税务测算及合同凭证工作台。" />
-  <title>跨境账桥 BorderLedger｜美港 TikTok Shop 资金与税务合规工作台</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20role%3D%22img%22%20aria-labelledby%3D%22title%22%3E%0A%3Ctitle%3E%E8%B7%A8%E5%A2%83%E8%B4%A6%E6%A1%A5%20BorderLedger%20%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87%3C%2Ftitle%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%22bridge%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%220%22%3E%3Cstop%20stop-color%3D%22%23a9edc6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23aab8ff%22%2F%3E%3C%2FlinearGradient%3E%0A%3C%2Fdefs%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2215%22%20fill%3D%22%230b1728%22%2F%3E%0A%3Crect%20x%3D%221.25%22%20y%3D%221.25%22%20width%3D%2261.5%22%20height%3D%2261.5%22%20rx%3D%2213.75%22%20fill%3D%22none%22%20stroke%3D%22%232b3e51%22%20stroke-width%3D%221.5%22%2F%3E%0A%3Cpath%20d%3D%22M16%2047V30%22%20stroke%3D%22%23a9edc6%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M48%2047V30%22%20stroke%3D%22%23aab8ff%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M16%2030C19.7%2014.5%2044.3%2014.5%2048%2030%22%20fill%3D%22none%22%20stroke%3D%22url%28%23bridge%29%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M15%2047H49%22%20fill%3D%22none%22%20stroke%3D%22%23e7f7fb%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M29%2036h6%22%20stroke%3D%22%23e7f7fb%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E" type="image/svg+xml" />
-  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAEa0lEQVRYhcWXW2wUVRjHf2dmdnbL7LVll4WWltLWUNCCpoGEmyXEmCAEFS/E+KQQAjFEX0x8I8YH31W8oMZEQqgQIphARLFcYogPEi0hBFmkUrqFFrbt3m+zx4dt117YZZdK+b/MmfnO9/1/cybnzDmCiVK8je07rbOMnRZdW6goqg0QTEMSZM404+lMujsZDu8J9f55cny8UNxZ19ri8vjOWnSrPzoyTDIRJ2eaSCmn448QoGoWqgw7htNFIhLpCib7NtDTkywAOOtaW2p8dReTsag1PDw0LcNSUoRCtd9PNpMN9KWCjxMIpBRAcXl8Zx+2OUBO5rjTH8Ri0Zr96uwjAKq3sX1Xld3xSmjg9kM1H69kPIrH628xFfcJtbq2+ZtELOrNpFMzBiAlKIqCzaY1KZquNyYT8RkzH1M8FkXXrcs1VVVtOdMsO9Fq01m4ZBH1TU3YnR6EVAiHRrgRuMbfVy6RLnMkzUwaRVUNDRDlTLVqXw2btr3EivVrsVkdkFXB1BBm/kpWJRlJcf7MKX449BVDoYGS9aQEhCJEU/uz8lbvPyU7r3n+aV579w2sWlXebNRwMsBYLBXL8O2+D/n13LGSdf3zG9Du9+bPbd/IlrdeHTWZGMuk0whTxaJOLGO12ti28wOcjtmcOP51yfolAZZ2LOXF3Vsg99+znivX+LnzOJd++4ORUH7dcFfXsGTZcp7ZuJWGhsWFvi9vfYe+mwG6u88W9VCr5zXviYZHpgQsusbuvW9jd9pBKiAVjn52mH17PqL36nVSiWShbzKRoPd6gDM/HQMEi1rbQSoIqdK0cBmnf+kkJ3NTPOwuN0oxspWbV+Gb7y3cn+r8kaNfHkbmphYak8zl+L7zc7pOHio8882pZ+XqzUVzigJs2L6h0DZNkyOffFe0yGQdPvgx46f2xk07KgewVumFdjwcJREtf7GKxyJEo+HCva7bKgcY7B0cbUkGgv1lm49poL8PZP5vPzjYWzlANjM65xRJNpOZEOtYt4bLVy8Q6LlIoOcil69eoGPdmkn5mQJANjsxvyyAmdJ9F6J76XTXOVpbnvpfAB75CDxygKKfwO+awxPWxwBBU1sdi/e3VFR4wYIWZhkmSBgesVcO0Fbbikd1AeDxOKldPbcigLzyv/m2Nl8pACmFQEzeEhw4eIgdu95EIAgGggwPDldk7XZ7mVfbDBIO7D8yJS6EAJCicdn6SOjuoD2bTk/p5K3Pkw/eKL25KCavrz6fP3BjSkzTLFT7fAkxt3VVF1J2hIdCD2TyoDKcLnRd71ZS4cR7hsOJokzrBFaxHC43yVj8UzUR6b+pu+ascLjcLfFoZGbM3R5ABm/9df51BeBW5vYL2Uw2MHvuPBTxcEfC4fZQZRip8PDdtUBOBSAUMiOG2Gcwa5Xb62sUQoweTItvPsqVEAJNs1Bld1Dj8wMyOHR3YHn45qVrcI+jt6v+yfWGYbxvtVrbhKoaYprHc0Ca0kya6UwgEY3tvdPz+xeM22X+C6HNp3OgstF5AAAAAElFTkSuQmCC" sizes="32x32" type="image/png" />
-  <meta name="apple-mobile-web-app-title" content="跨境账桥" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="跨境账桥 BorderLedger｜美港电商合规工作台" />
-  <meta property="og:description" content="收款有路径，付款有依据，税务有底稿。" />
-  <style>
-:root{color-scheme:dark;--bg:#0a111d;--bg-soft:#0e1929;--card:#111d2e;--card-2:#152239;--line:#27354a;--line-soft:#1d2c40;--text:#eff6f7;--muted:#93a5ba;--subtle:#70849c;--mint:#a9edc6;--mint-strong:#8ff5ba;--blue:#b0bbff;--orange:#ebc393;--radius:17px;--sidebar:254px;--shadow:0 16px 45px #02060e3d}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"SF Pro Display","PingFang SC","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.65;letter-spacing:.005em}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--mint);outline-offset:3px}::selection{background:#9af3bb50}h1,h2,h3,h4,p{margin-top:0}.skip-link{position:fixed;top:-80px;left:20px;background:var(--mint);color:#04130a;padding:10px 16px;z-index:999;border-radius:10px}.skip-link:focus{top:16px}.site-shell{display:flex;min-height:100vh}.sidebar{width:var(--sidebar);background:#0d1726;border-right:1px solid var(--line-soft);height:100vh;position:sticky;top:0;display:flex;flex-direction:column;flex-shrink:0;padding:31px 18px 26px 25px}.brand{display:flex;gap:13px;align-items:center;font-size:13px;font-weight:850;letter-spacing:.1em;line-height:1.3;white-space:nowrap}.brand-second{font-weight:400;color:var(--mint)}.brand small{display:block;font-size:10px;letter-spacing:.17em;font-weight:400;color:var(--subtle);margin-top:7px}.brand-mark{width:34px;height:34px;display:grid;grid-template-columns:repeat(2,12px);grid-template-rows:repeat(2,12px);gap:3px;transform:rotate(-10deg);flex-shrink:0}.brand-mark span{background:var(--mint);border-radius:3px}.brand-mark span:nth-child(2){background:#5d8a88}.brand-mark span:nth-child(3){background:#659999}.brand-mark span:nth-child(4){background:var(--blue)}.side-caption{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#667b95;font-size:10px;letter-spacing:.1em;margin:83px 0 20px 14px}.side-nav{display:flex;flex-direction:column;gap:6px}.side-nav a{padding:12px 12px;border:1px solid transparent;border-radius:10px;color:#9eafc2;display:flex;align-items:center;gap:19px;transition:background .2s,color .2s;font-weight:550}.side-nav a span{font:11px ui-monospace,SFMono-Regular,Consolas,monospace;color:#607a8e}.side-nav a:hover{color:var(--text);background:#162236}.side-nav a.active{background:#203c39;border-color:#345d54;color:var(--mint)}.side-nav a.active span{color:var(--mint)}.sidebar-bottom{margin-top:auto;padding-left:11px}.side-status{font-size:11px;font-weight:600;color:#b4d9ca;display:flex;gap:9px;align-items:center}.pulse,.status-good{color:var(--mint)}.pulse{width:6px;height:6px;background:var(--mint);box-shadow:0 0 10px var(--mint);border-radius:50%;display:inline-block}.sidebar-bottom p{font-size:10px;color:#63768d;line-height:2;margin:12px 0 0}.content-wrap{width:calc(100% - var(--sidebar));min-width:0}.topbar{height:70px;padding:0 clamp(26px,5vw,80px);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line-soft);font-size:11px;color:#74899f;letter-spacing:.12em}.topbar-left,.top-actions{display:flex;align-items:center;gap:15px}.breadcrumbs{color:#b3c2d0}.separator{color:#52677e}.top-dot{width:7px;height:7px;background:var(--mint);border-radius:50%;box-shadow:0 0 10px #84e6aa66}.edition{color:#a4b5c6}.icon-button{background:#152235;border:1px solid #2a3a4f;color:#b2c5d8;width:29px;height:29px;border-radius:8px;font-size:19px;line-height:1}.icon-button:hover{border-color:var(--mint)}.mobile-brand{display:none}main{max-width:1520px;margin:auto;padding:0 clamp(26px,5vw,80px)}.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);align-items:center;gap:30px;min-height:525px;padding:54px 0 36px}.hero-copy{position:relative;z-index:2}.eyebrow{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.14em;color:var(--mint);display:flex;align-items:center;gap:8px;white-space:nowrap}.eyebrow-mark{width:21px;height:1px;background:var(--mint)}.tag{margin-left:6px;padding:4px 9px;background:#244037;border:1px solid #386451;border-radius:3px;font-size:9px;color:#b3eac5}.hero h1{font-size:clamp(35px,4.3vw,65px);line-height:1.28;letter-spacing:-.055em;font-weight:750;margin:28px 0 22px;white-space:nowrap}.gradient-text{background:linear-gradient(100deg,#bcf3c6 20%,#a9e6f0 66%,#bcc2ff);color:transparent;background-clip:text;-webkit-background-clip:text}.hero-lead{font-size:14px;color:#a5b5c7;line-height:2;max-width:530px}.hero-buttons{display:flex;gap:11px;align-items:center;margin-top:29px}.btn{border-radius:9px;padding:13px 19px;font-weight:650;font-size:12px;display:inline-flex;justify-content:center;align-items:center;gap:22px;border:1px solid transparent;transition:transform .2s,background .2s,color .2s;white-space:nowrap}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--mint);color:#09251b}.btn-primary:hover{background:#ceffde}.btn-ghost{color:#cad9e5;background:#152236;border-color:#304057}.btn-ghost:hover{background:#1e304b}.hero-foot{margin-top:35px;color:#849aac;font-size:10px;display:flex;align-items:center;gap:10px;white-space:nowrap;letter-spacing:.03em}.hero-line{height:10px;width:1px;background:#45566c;display:inline-block;margin:0 6px}.hero-visual{min-height:365px;background:linear-gradient(155deg,#172439,#111e30 65%,#172a31);border:1px solid #304155;border-radius:20px;position:relative;overflow:hidden;display:flex;align-items:center;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}.hero-visual:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 48% 45%,#4ba99024,transparent 65%)}.visual-header,.visual-bottom{position:absolute;left:20px;right:20px;display:flex;align-items:center;justify-content:space-between;font:9px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.12em;color:#7796a8}.visual-header{top:20px}.visual-micro{color:#c6d8da}.visual-bottom{bottom:19px;justify-content:center;gap:14px;color:#789aa3;font-size:8px}.mini-rule{height:1px;width:24px;background:#4b6b6e}.world-dots{position:absolute;inset:45px 10px;background-image:radial-gradient(#779bae30 .8px,transparent .9px);background-size:15px 15px;mask-image:radial-gradient(ellipse,#000 25%,transparent 68%)}.orbit{border:1px solid #72baab25;position:absolute;border-radius:50%;width:320px;height:320px;transform:rotate(50deg)}.orbit-two{width:470px;height:195px;transform:rotate(-27deg)}.country-node{position:relative;width:235px;height:68px;display:flex;align-items:center;gap:13px;padding:10px 14px;background:#1c3142;border:1px solid #476878;border-radius:10px;box-shadow:0 8px 35px #03081044}.country-node b{display:block;font-size:11px;letter-spacing:.09em}.country-node small{font:9px ui-monospace,SFMono-Regular,Consolas,monospace;color:#81a4b1}.node-flag{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#3a4c71;color:#c8dbff;font-weight:800;font-size:11px}.hk-flag{background:#345747;color:#b4f7cf}.node-arrow{margin-left:auto;color:#93c1b8}.hk-node{background:#1b3a37;border-color:#4f897a}.flow-path{height:92px;position:relative;width:2px;border-left:1px dashed #82c2b2}.flow-path:after{content:"";position:absolute;width:7px;height:7px;bottom:-2px;left:-4px;transform:rotate(45deg);border-right:1px solid #91e6c3;border-bottom:1px solid #91e6c3}.flow-path i{display:block;width:5px;height:5px;border-radius:50%;background:#a2fbd0;position:absolute;left:-3px;top:20px;box-shadow:0 0 11px #a2fbd0}.flow-path i:nth-child(2){top:44px;opacity:.6}.flow-path i:nth-child(3){top:67px;opacity:.3}.flow-label{font:8px ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap;letter-spacing:.1em;position:absolute;top:45px;left:18px;color:#9ebdb8}.intro-note{display:flex;gap:15px;align-items:flex-start;background:#152439;border:1px solid #33465e;padding:19px 22px;border-radius:12px;margin:0 0 20px}.note-glyph{font-family:Georgia,serif;display:grid;place-items:center;color:var(--mint);font-size:17px;width:22px;height:22px;border:1px solid #477b66;border-radius:50%;flex:none}.intro-note strong{font-size:12px;color:#d9e6ec}.intro-note p{font-size:12px;color:#9fb1c1;margin:4px 0 0;line-height:1.8}.section{padding-top:74px}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:25px}.section-head.compact{margin-bottom:21px}.section-kicker{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--mint);letter-spacing:.13em;margin-bottom:10px}.section-head h2{font-size:26px;line-height:1.32;letter-spacing:-.035em;font-weight:750;margin-bottom:0}.section-head p{font-size:12px;color:var(--muted);line-height:1.75;margin:11px 0 0}.section-meta{font:9px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.1em;color:#7e90a7;white-space:nowrap}.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.metric-card{background:#111d2e;border:1px solid #2b3b50;border-radius:13px;padding:19px 21px 17px;min-height:170px}.metric-top{display:flex;justify-content:space-between;color:#98aabc;font-size:11px}.metric-symbol{font-size:15px;color:#60798c}.metric-value{font-size:45px;line-height:1.25;letter-spacing:-.05em;margin:16px 0 7px;font-weight:750}.metric-value span{font-size:25px;margin-left:2px;color:var(--mint)}.metric-value.text-metric{font-size:30px;color:var(--mint);margin:28px 0 15px}.metric-detail{font-size:11px;color:#7d91a6}.flow-board{border:1px solid #31445a;background:linear-gradient(140deg,#142337,#121e30);border-radius:16px;overflow:hidden}.flow-board-top{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid #2c3c4d;font:10px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.09em;color:#99aec1}.flow-valid{color:var(--mint)}.flow-valid span{font-size:9px;margin-right:7px}.flow-grid{display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr;gap:5px;align-items:center;text-align:center;padding:36px 20px 30px}.flow-step{min-width:0}.step-index{font:9px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.1em;color:#7793a7}.flow-icon{height:55px;width:55px;display:grid;place-items:center;margin:15px auto 17px;border-radius:13px;background:#27394e;border:1px solid #4c6577;font-size:24px;color:#bdd0dd}.flow-step.emphasis .flow-icon{background:#244239;border-color:#5c9482;color:#c3f2d4;box-shadow:0 0 25px #82e4b314}.flow-step h3{font-size:15px;margin:0 0 6px}.flow-step p{margin:0;color:#8da3b4;font-size:11px}.flow-divider{color:#84bcae;font-size:24px}.flow-tax-lane{display:flex;gap:15px;align-items:center;position:relative;margin:0 22px 22px;background:#0d1928;border:1px solid #293e50;border-radius:9px;padding:17px 20px}.flow-tax-icon{height:39px;width:39px;display:grid;place-items:center;border-radius:9px;color:#b6c5de;background:#223149;flex-shrink:0;font-size:23px}.flow-tax-lane strong{font-size:12px}.flow-tax-lane p{margin:4px 0 0;color:#8198af;font-size:11px}.tax-lane-label{font:9px ui-monospace,SFMono-Regular,Consolas,monospace;color:#65859a;white-space:nowrap;margin-left:auto}.under-board{font-size:11px;color:#8da1b4;margin:13px 0 0;display:flex;gap:9px;align-items:baseline}.under-board span{color:var(--orange);font-size:15px}.model-layout{display:grid;grid-template-columns:300px 1fr;gap:15px}.model-tabs{display:flex;flex-direction:column;gap:10px}.model-tab{display:flex;align-items:center;gap:13px;width:100%;border:1px solid #26394c;border-radius:11px;background:#111c2d;color:#9eafc4;text-align:left;padding:20px 19px}.model-tab:hover{border-color:#607a8d}.model-tab.active{border-color:#537a69;background:#1b3737;color:#e8f7ee}.tab-numb{font:12px ui-monospace,SFMono-Regular,Consolas,monospace;color:#6c879c}.model-tab.active .tab-numb{color:var(--mint)}.tab-text{display:flex;flex-direction:column;gap:3px}.tab-text b{font-size:13px}.tab-text small{font:9px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.05em;color:#6e8b9e}.tab-arrow{margin-left:auto;font-size:15px;color:#7c9a98}.model-detail{background:#152337;border:1px solid #2e4158;border-radius:13px;padding:27px 29px;min-height:345px}.detail-top{display:flex;justify-content:space-between;align-items:center}.detail-status{border-radius:4px;padding:4px 10px;font-size:10px;font-weight:650}.detail-status.good{color:#b5efcb;background:#25453b}.detail-status.medium{color:#efd6af;background:#56442c}.detail-status.warning{color:#f1b4a4;background:#5a3433}.detail-num{color:#7088a0;font:10px ui-monospace,SFMono-Regular,Consolas,monospace}.model-detail h3{margin:17px 0 9px;font-size:20px}.model-detail>p{font-size:12px;color:#a9bac9;line-height:1.85;max-width:730px;margin-bottom:21px}.detail-lists{display:grid;grid-template-columns:1fr 1fr;gap:24px}.detail-lists h4{margin:0 0 8px;font-size:11px;color:#d3e0e5}.detail-lists ul{margin:0;padding-left:16px;color:#94aabd;font-size:11px;line-height:2}.detail-lists li::marker{color:#8bcdae}.detail-footer{border-top:1px solid #314258;margin-top:17px;padding-top:14px;color:#8fb7a6;font-size:11px}.text-button{background:none;border:0;color:#a9c6bd;white-space:nowrap;font-size:11px}.text-button:hover{color:var(--mint)}.calculator-layout{display:grid;grid-template-columns:minmax(280px,1fr) minmax(290px,.93fr);gap:15px}.calc-inputs,.calc-results{background:#132033;border:1px solid #304258;border-radius:14px;padding:25px}.calc-form-head,.results-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;font:10px ui-monospace,SFMono-Regular,Consolas,monospace;color:#80a0af;letter-spacing:.07em}.calc-form-head strong{font-size:10px;font-weight:500;color:#788fa6}.field{display:block;margin-bottom:20px}.field>label,.field>span{font-size:11px;font-weight:600;color:#bfcbd9;display:block;margin-bottom:9px}.field-help{font-weight:400;color:#698aa0;cursor:help}.field select{width:100%;background:#0d1929;border:1px solid #35485e;border-radius:8px;padding:12px;color:#cfdbe3;outline:none;appearance:none;background-image:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"%3E%3Cpath d="m2 4 4 4 4-4" fill="none" stroke="%2399afbd" stroke-width="1.5"/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 14px center}.input-currency{background:#0d1929;border:1px solid #35485e;border-radius:8px;display:flex;align-items:center;overflow:hidden;height:42px}.input-currency:focus-within{border-color:var(--mint)}.input-currency span{margin:0 13px;color:#80b5a6;font-weight:700}.input-currency input{width:100%;min-width:0;border:0;background:none;color:#e7f4ee;font-size:15px;font-weight:700;outline:none;padding:9px 12px 9px 0;font-variant-numeric:tabular-nums}.input-currency input::-webkit-inner-spin-button{-webkit-appearance:none}.range{width:100%;margin:12px 0 0;accent-color:var(--mint);height:4px;cursor:pointer}.calc-caption{font-size:10px;color:#7890a7;line-height:1.8;border-top:1px solid #2a3c53;padding-top:15px}.calc-results{background:linear-gradient(155deg,#1c3935 0%,#16302f 38%,#132536 90%);border-color:#466f62;padding:25px 26px;display:flex;flex-direction:column}.results-top{color:#bbddcd;margin-bottom:28px}.result-live{color:#b4e9c7}.result-live i{width:5px;height:5px;border-radius:50%;display:inline-block;background:#a4f9b9;vertical-align:middle;margin-right:4px}.results-primary>span{display:block;font-size:11px;color:#b6d0c4}.results-primary>strong{display:block;font-size:clamp(31px,4vw,52px);font-weight:750;letter-spacing:-.06em;margin:6px 0;line-height:1.45;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.results-primary>small{font-size:10px;color:#8fb8a9}.result-separator{height:1px;background:#4a7468;margin:24px 0 7px}.result-item{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #325a55;padding:20px 0;gap:10px}.result-item>div:first-child{display:flex;align-items:center;gap:12px}.result-country{width:33px;height:33px;border:1px solid #64888f;background:#30465b;border-radius:8px;display:grid;place-items:center;font-size:10px;font-weight:750;flex:none}.hk-result{background:#2b6255;border-color:#588773}.result-item strong{display:block;font-size:12px}.result-item small{display:block;font-size:10px;color:#92b6aa;margin-top:4px}.result-amount{text-align:right}.result-amount strong{font-size:17px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}.reserve-card{background:#092b26;border:1px solid #416c60;border-radius:11px;padding:17px 17px;margin-top:25px;display:flex;flex-direction:column;gap:4px}.reserve-card>span{font-size:11px;color:#b9dfcb}.small-info{font-size:9px;color:#7fa79a;margin-left:3px}.reserve-card strong{font-size:25px;line-height:1.4;color:#ccf6d8;letter-spacing:-.025em;font-variant-numeric:tabular-nums}.reserve-card small{font-size:10px;color:#88b1a3}.calc-warning{font-size:10px;color:#a8c1b5;line-height:1.7;margin:16px 0 19px}.calc-actions{display:flex;gap:9px;margin-top:auto}.btn-export{background:var(--mint);color:#092a1d;flex:1}.btn-muted{background:#284b43;color:#cde7d8;border-color:#517367}.formula-band{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;padding:17px 3px;border-bottom:1px solid var(--line);font-size:10px;color:#8198ac}.formula-band span:first-child{font-weight:700;color:var(--mint)}.progress-head{text-align:right;display:flex;flex-direction:column}.progress-head strong{font-size:23px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}.progress-head span{font:9px ui-monospace,SFMono-Regular,Consolas,monospace;color:#8297a9}.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.check-card{border:1px solid #2b3c50;background:#111e30;border-radius:14px;padding:22px 22px 11px}.check-group-head{display:flex;align-items:center;gap:13px;margin-bottom:18px}.check-icon{height:37px;width:37px;display:grid;place-items:center;border:1px solid #557c91;background:#244259;border-radius:10px;font:15px ui-monospace,SFMono-Regular,Consolas,monospace;color:#c7e7f1}.check-icon.hk-check{background:#265045;border-color:#537f6c;color:#b7f1c9}.check-group-head h3{font-size:14px;margin:0 0 2px}.check-group-head small{font:9px ui-monospace,SFMono-Regular,Consolas,monospace;color:#8298ac}.check-row{display:flex;align-items:flex-start;gap:12px;color:#b2c2d2;font-size:11px;line-height:1.7;border-top:1px solid #28374a;padding:14px 0;cursor:pointer}.check-row input{accent-color:var(--mint);width:15px;height:15px;margin:3px 0 0;flex:none;cursor:pointer}.check-row:has(input:checked) span{color:#80a994;text-decoration:line-through;text-decoration-color:#5d8272}.progress-track{height:5px;background:#26364a;border-radius:8px;margin-top:18px;overflow:hidden}.progress-track>div{width:0%;height:100%;background:linear-gradient(90deg,#8ce4a2,#b4ddff);transition:width .25s}.check-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0 35px;color:#8197ab;font-size:11px}.delegate{display:flex;gap:19px;align-items:center;padding:23px 25px;border-radius:13px;border:1px solid #365346;background:#183028}.delegate-symbol{font-size:29px;color:var(--mint);align-self:flex-start}.delegate h3{font-size:14px;margin:0 0 4px}.delegate p{color:#a0b9aa;font-size:11px;margin:0;line-height:1.8}.delegate a{flex-shrink:0;color:var(--mint);font-size:10px;white-space:nowrap;border:1px solid #568873;padding:9px 11px;border-radius:7px}.delegate a:hover{background:#2a5545}.faq-list{border-top:1px solid #324154}.faq-list details{border-bottom:1px solid #2b3a4c}.faq-list summary{cursor:pointer;padding:18px 6px;list-style:none;display:flex;justify-content:space-between;gap:12px;font-weight:600;font-size:13px;color:#d7e2e8}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary span{font-size:19px;font-weight:300;color:var(--mint);transition:transform .2s}.faq-list details[open] summary span{transform:rotate(45deg)}.faq-list details p{color:#95aabd;font-size:12px;line-height:1.95;margin:0 45px 20px 6px;max-width:790px}.sources{padding-bottom:45px}.source-list{border:1px solid #304054;border-radius:13px;overflow:hidden}.source-list a{display:flex;gap:18px;align-items:center;padding:15px 21px;border-bottom:1px solid #26364b;background:#111d2e;transition:background .15s}.source-list a:last-child{border-bottom:0}.source-list a:hover{background:#1a3040}.source-index{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;color:#77a99a}.source-list a div{flex:1}.source-list a strong{font-size:12px;display:block;color:#cadce3}.source-list a small{color:#8197aa;font-size:10px;display:block;margin-top:2px}.source-list a>span:last-child{color:#90cdb2;font-size:17px}.disclaimer{border-top:1px solid #324054;padding:25px 0;display:flex;gap:18px;align-items:baseline}.disclaimer b{color:#b3c8d1;white-space:nowrap;font-size:11px}.disclaimer p{color:#8094a8;font-size:10px;line-height:1.8;margin:0}.footer{border-top:1px solid #263345;padding:25px 0 37px;display:flex;justify-content:space-between;align-items:center;gap:10px;font:10px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.1em;color:#748da0}.footer span:first-child{color:#a2c7b5}.footer a:hover{color:var(--mint)}
-@media(max-width:1260px){:root{--sidebar:215px}.sidebar{padding-left:17px}.brand{font-size:11px;gap:9px}.hero{grid-template-columns:1fr .85fr}.hero h1{font-size:clamp(31px,3.7vw,54px)}.model-layout{grid-template-columns:260px 1fr}.model-detail{padding:23px}.calc-inputs,.calc-results{padding:22px}.tax-lane-label{display:none}}
-@media(max-width:970px){.sidebar{display:none}.content-wrap{width:100%}.topbar{padding:0 26px;height:62px}.topbar-left{display:none}.mobile-brand{display:flex;align-items:center;gap:11px;color:#e3f3ef;font-size:12px;letter-spacing:0}.mini-logo{background:#254a3b;color:var(--mint);border-radius:6px;padding:3px 7px;font:11px ui-monospace,SFMono-Regular,Consolas,monospace}main{padding:0 26px}.hero{grid-template-columns:1.1fr .9fr;gap:18px;min-height:470px}.hero h1{font-size:clamp(30px,4vw,45px)}.hero-lead{font-size:12px}.hero-visual{min-height:310px}.section{padding-top:58px}.model-layout{grid-template-columns:225px 1fr}.model-tab{padding:18px 12px}.detail-lists{gap:12px}.calculator-layout{grid-template-columns:1fr 1fr}}
-@media(max-width:720px){.edition{display:none}.hero{display:flex;flex-direction:column;align-items:stretch;padding:47px 0 20px;gap:29px}.hero h1{font-size:clamp(34px,8vw,52px);white-space:normal;margin:20px 0}.eyebrow{font-size:9px;flex-wrap:wrap}.tag{display:none}.hero-lead{font-size:13px}.hero-visual{min-height:340px}.hero-foot{margin-top:25px;flex-wrap:wrap;white-space:normal}.hero-line{display:none}.intro-note{margin-top:16px}.section-head{align-items:flex-start}.section-head h2{font-size:23px}.section-meta{display:none}.metric-grid{grid-template-columns:1fr;gap:9px}.metric-card{min-height:125px}.metric-value{font-size:37px;margin:9px 0}.metric-value.text-metric{font-size:27px;margin:15px 0}.flow-grid{grid-template-columns:1fr;gap:8px;padding:25px 14px}.flow-divider{transform:rotate(90deg);line-height:1}.flow-step{padding:2px 0 12px}.flow-tax-lane{margin:0 15px 15px;padding:15px}.model-layout,.calculator-layout,.check-grid{grid-template-columns:1fr}.model-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.model-tab{justify-content:center;min-height:95px;flex-direction:column;gap:4px;align-items:center;text-align:center;padding:11px 5px}.tab-numb{font-size:10px}.tab-text b{font-size:11px}.tab-text small,.tab-arrow{display:none}.detail-lists{gap:20px}.calc-results{min-height:490px}.progress-head strong{font-size:18px}.delegate{align-items:flex-start;flex-wrap:wrap}.delegate a{margin-left:49px}.disclaimer{display:block}.disclaimer b{display:block;margin-bottom:8px}.footer{font-size:8px}}
-@media(max-width:390px){main{padding:0 16px}.topbar{padding:0 16px}.hero h1{font-size:31px}.hero-buttons{gap:6px}.btn{padding:12px 10px;gap:8px}.detail-lists{grid-template-columns:1fr;gap:12px}.source-list a{gap:9px;padding:13px 11px}.source-list a strong{font-size:11px}.footer span:nth-child(2){display:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
-@media print{*{color:#141e27!important;box-shadow:none!important}body{background:#fff!important}.sidebar,.topbar,.hero-visual,.hero-buttons,.btn,.text-button,.calc-actions{display:none!important}.content-wrap{width:100%}main{max-width:none;padding:0 20px}.hero{display:block;min-height:auto;padding:20px 0}.hero h1{font-size:30px}.hero-lead{color:#333!important}.section{padding-top:25px;break-inside:avoid}.metric-card,.flow-board,.model-detail,.calc-inputs,.calc-results,.check-card,.delegate,.source-list,.intro-note{background:#fff!important;border:1px solid #ddd!important}.metric-grid{grid-template-columns:repeat(3,1fr)}.model-layout{grid-template-columns:200px 1fr}.calculator-layout{grid-template-columns:1fr 1fr}.check-grid{grid-template-columns:1fr 1fr}.results-primary strong{font-size:25px}.source-list a{background:#fff!important}.faq-list details:not([open]) p{display:none}}
-
-/* BorderLedger brand identity */
-.brand{gap:11px;letter-spacing:.055em}
-.brand-logo{display:block;flex:none;width:39px;height:39px;border-radius:10px;filter:drop-shadow(0 3px 11px rgba(115,234,182,.12))}
-.brand-wordmark{font-family:Inter,"SF Pro Display",sans-serif;font-weight:830;font-size:12px;letter-spacing:.07em}
-.brand-wordmark .brand-second{color:var(--mint);font-weight:830}
-.brand-wordmark small{font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:10px;font-weight:400;letter-spacing:.055em;color:var(--muted);margin-top:6px}
-.mobile-logo{flex:none;width:30px;height:30px;border-radius:8px}
-.mobile-brand-en{color:var(--mint);font-size:10px;letter-spacing:.03em;margin-left:4px}
-@media(max-width:1260px) and (min-width:971px){.brand-wordmark{font-size:10px;letter-spacing:.035em}.brand-logo{width:35px;height:35px}}
-@media(max-width:370px){.mobile-brand-en{display:none}}
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#081824">
+<meta name="description" content="跨境账桥 BorderLedger：Zyla 美国收款、万里汇 WorldFirst 香港账户及 KA 单向资金划转架构，税务申报独立建模。">
+<meta property="og:title" content="BorderLedger 跨境账桥 · Zyla × WorldFirst">
+<meta property="og:description" content="收款有路径，付款有依据，税务有底稿。">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="shortcut icon" href="./favicon.svg">
+<title>BorderLedger 跨境账桥｜Zyla × WorldFirst 美港资金架构</title>
+<style>
+:root{color-scheme:dark;--bg:#071522;--card:#102234;--card2:#13283b;--border:#2b4354;--line:#385a65;--ink:#eef6f2;--muted:#a5b8c2;--sub:#78929e;--mint:#9ee5bf;--mint2:#76c9b0;--gold:#edc48b;--warn:#edbb83;--ui:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--bg);font-family:var(--ui);font-size:14px}a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #bbf2d3;outline-offset:3px}
+body:before{content:"";position:absolute;top:0;left:0;width:100%;height:660px;z-index:-1;background:radial-gradient(ellipse 650px 490px at 75% 6%,#173f46 0%,transparent 74%),linear-gradient(180deg,#0b2031 0%,transparent 100%);pointer-events:none}
+.max{width:min(1180px,calc(100% - 56px));margin-inline:auto}
+.topbar{height:72px;border-bottom:1px solid #ffffff16;background:#091a27d9;backdrop-filter:blur(18px);position:sticky;top:0;z-index:20}.top-inner{display:flex;align-items:center;justify-content:space-between;height:100%;gap:22px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.logo{width:39px;height:39px;border-radius:11px;background:#172a36;padding:5px;border:1px solid #33545b}.brand-copy{display:flex;flex-direction:column;gap:1px}.brand-copy strong{font-size:16px;letter-spacing:.005em}.brand-copy small{font-size:10px;color:#89a9ae;letter-spacing:.1em}.nav{display:flex;align-items:center;gap:21px}.nav a{text-decoration:none;color:#afc4cd;font-size:12px}.nav a:hover{color:var(--mint)}.nav .repo{border:1px solid #44676a;border-radius:9px;padding:8px 12px;color:#dbf3ea}
+.hero{padding:85px 0 53px;display:grid;grid-template-columns:1.14fr .86fr;gap:52px;align-items:center}.kicker{display:flex;align-items:center;gap:10px;font-size:10px;text-transform:uppercase;letter-spacing:.19em;font-weight:750;color:var(--mint)}.kicker:before{content:"";width:23px;height:1px;background:var(--mint)}h1,h2,h3,p{margin-top:0}.hero h1{font-size:clamp(36px,4.8vw,64px);line-height:1.17;letter-spacing:-.055em;margin:21px 0 24px;font-weight:740}.hero h1 em{font-style:normal;color:var(--mint)}.lede{color:#b0c7cc;line-height:1.98;font-size:14px;max-width:570px}.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:29px 0}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;text-decoration:none;padding:12px 17px;border-radius:9px;border:1px solid #466367;background:#152b38;font-weight:690;font-size:12px;color:#e1f6ed}.btn.main{color:#082117;background:var(--mint);border-color:var(--mint)}.tiny{font-size:10px;line-height:1.8;color:#8fa4af}.hero-visual{background:linear-gradient(145deg,#152f3a,#122136);border:1px solid #3d6465;border-radius:17px;padding:26px;box-shadow:0 18px 65px #0003;min-width:0}.visual-head{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#aac4ca;font-size:10px;letter-spacing:.08em}.visual-head b{font-size:10px;color:var(--mint)}.visual-flow{display:grid;grid-template-columns:1fr 30px 1fr;gap:8px;align-items:stretch;margin:28px 0 17px}.visual-box{padding:20px 13px;border-radius:11px;background:#0a2230;border:1px solid #375867;text-align:center}.visual-box span{display:block;color:#a9c8c8;font-size:10px;margin-bottom:9px}.visual-box strong{font-size:19px;letter-spacing:-.04em}.visual-arrow{display:grid;place-items:center;font-size:22px;color:#9ddac3}.visual-route{border:1px dashed #5d8175;border-radius:9px;padding:14px;text-align:center;color:#acd8c7;font-size:12px}.visual-route strong{font-size:13px;color:#d5f9e2}.visual-annotation{font-size:10px;color:#99adbb;line-height:1.8;margin:17px 0 0}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.pill{font-size:10px;letter-spacing:.04em;color:#b9ded5;padding:8px 11px;border:1px solid #3e5b5f;background:#102932;border-radius:50px}
+section.block{scroll-margin-top:92px;padding:55px 0 46px;border-top:1px solid #27404a}.section-top{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:26px}.eyebrow{font:700 10px ui-monospace,Consolas,monospace;letter-spacing:.18em;color:#8fd9b8;margin-bottom:13px}section h2{font-size:clamp(24px,3vw,36px);letter-spacing:-.04em;margin:0 0 10px}section .intro{color:#a5bbc6;line-height:1.9;font-size:12px;max-width:770px;margin:0}.side-note{white-space:nowrap;font-size:10px;letter-spacing:.08em;color:#83a2ae}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{border:1px solid var(--border);background:linear-gradient(130deg,#142a3b,#0f2130);border-radius:15px;padding:26px;min-width:0}.card h3{font-size:19px;letter-spacing:-.025em;margin:8px 0 13px}.card p{font-size:12px;color:#b0c2cc;line-height:1.9}.card ul,.route-detail ul{padding-left:18px;margin:8px 0}.card li,.route-detail li{color:#acc2c7;font-size:11px;line-height:1.95;margin:5px 0}.card a.source-link{display:inline-block;font-size:11px;color:#afedc9;text-underline-offset:4px;margin-top:5px}.badge{display:inline-block;border:1px solid #417d69;background:#1d473b;color:#beefd0;padding:5px 9px;font-size:10px;border-radius:30px;font-weight:700}.badge.amber{border-color:#98704a;color:#f0d1a3;background:#423328}.brand-name{font-size:34px;letter-spacing:-.045em;font-weight:740;margin:13px 0}.brand-name small{font-size:16px;letter-spacing:normal;color:#a1c1c1}.rule{border-top:1px solid #335060;margin:17px 0}.key{color:var(--mint);font-size:10px;text-transform:uppercase;letter-spacing:.1em}.title-row{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.statement{display:flex;align-items:flex-start;gap:15px;border:1px solid #436e65;border-radius:13px;background:#16342e;padding:22px 25px;margin-top:17px}.statement .mark{width:41px;height:41px;border:1px solid #6ca98f;color:#d2ffde;border-radius:12px;display:grid;place-items:center;font-size:22px;flex:none}.statement strong{font-size:13px}.statement p{margin:6px 0 0;color:#a8cbbc;line-height:1.85;font-size:11px}
+.segment{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:9px;border:1px solid #315565;background:#0d1e2e;border-radius:13px}.choice{border:1px solid transparent;border-radius:10px;text-align:left;background:transparent;padding:15px;color:#b7cdd3;min-width:0}.choice:hover{background:#193546}.choice[aria-pressed="true"]{border-color:#72af98;background:#1b3e40}.choice b{display:block;font-size:13px;color:#e0f5e8}.choice small{display:block;margin-top:6px;color:#a6c0bc;font-size:10px;line-height:1.5}.content-panel{background:#122739;border:1px solid #315162;border-radius:13px;padding:25px;margin-top:12px}.content-panel h3{font-size:21px;margin:12px 0 10px}.content-panel p{font-size:12px;color:#b3c8cd;line-height:1.9}.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:17px 0}.metric{border:1px solid #395a60;background:#0b2630;padding:18px 14px;border-radius:10px;min-width:0}.metric small{display:block;color:#82ada9;font-size:9px;letter-spacing:.06em}.metric strong{display:block;font-size:14px;margin:10px 0 5px;color:#e3f8ea;overflow-wrap:anywhere}.metric p{margin:0;font-size:10px;color:#9ab8b7}.callout{border-left:3px solid #e4b674;background:#322b29;padding:14px 17px;color:#ebcfaa;font-size:11px;line-height:1.95;border-radius:0 8px 8px 0}
+.ka-layout{display:grid;grid-template-columns:.94fr 1.06fr;gap:16px;align-items:stretch}.option-col{border:1px solid #3a5967;background:#0f2534;border-radius:14px;padding:22px}.radio-card{display:flex;align-items:center;gap:11px;cursor:pointer;border:1px solid #3a5260;border-radius:11px;background:#162b39;padding:17px;margin:11px 0}.radio-card:has(input:checked){border-color:#85cbaa;background:#1b413d}.radio-card input{width:19px;height:19px;accent-color:#9ee5bf;flex:none}.radio-card span{font-size:13px;font-weight:650}.radio-card small{display:block;font-size:10px;font-weight:400;color:#aac4ba;line-height:1.7;margin-top:4px}.ka-single{color:#efcf99;display:inline-flex;align-items:center;gap:6px;font-size:10px;margin:8px 0 0}.ka-canvas{border:1px solid #456e65;background:radial-gradient(circle at 40% 0,#214542,#152939 75%);border-radius:14px;padding:25px;display:flex;flex-direction:column;justify-content:center}.ka-label{font-size:10px;letter-spacing:.14em;color:#aad8ba;margin-bottom:23px}.ka-map{display:grid;grid-template-columns:1fr 54px 1fr;gap:10px;align-items:center}.ka-node{text-align:center;padding:20px 12px;background:#0c2530;border:1px solid #538675;border-radius:13px}.ka-node small{display:block;color:#88b9a9;font-size:10px;margin-bottom:8px}.ka-node strong{font-size:20px;letter-spacing:-.03em}.ka-node em{display:block;font-style:normal;color:#abc6bd;font-size:10px;margin-top:6px}.ka-arrow{font-size:31px;color:#bdf4d1;text-align:center}.ka-caption{font-size:12px;color:#bdd9cf;margin:23px 0 7px;text-align:center;line-height:1.8}.ka-controls{margin-top:15px;padding:19px;border:1px solid #3d5261;background:#102435;border-radius:12px}.ka-controls strong{display:block;color:#e4f7ed;font-size:12px;margin-bottom:10px}.ka-controls ol{padding-left:17px;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}.ka-controls li{font-size:11px;line-height:1.85;color:#abbfc7}.warn{color:#e7c89f;background:#372f28;border:1px solid #735640;padding:18px;border-radius:11px;font-size:11px;line-height:1.95;margin-top:16px}
+.two-track{display:grid;grid-template-columns:1fr 1fr;gap:15px}.track{border:1px solid #3e5865;padding:21px;background:#0e2735;border-radius:13px}.track:nth-child(2){border-color:#5d704f;background:#1a2d2b}.track label{font-size:9px;letter-spacing:.15em;color:#88cab2}.track h3{font-size:19px;margin:14px 0}.track p{font-size:11px;color:#acc2c9;line-height:1.95;margin:0}.track:nth-child(2) p{color:#b4c9b9}
+.sim{display:grid;grid-template-columns:1.2fr .8fr;gap:15px}.form-panel,.results-panel{border:1px solid #344f60;border-radius:13px;background:#132839;padding:23px}.form-panel label{display:flex;justify-content:space-between;gap:9px;font-size:12px;color:#a5c0c5;margin:0 0 9px}.form-panel label strong{color:#e8f4ec;font-variant-numeric:tabular-nums}.slider-row{margin-bottom:19px}.slider-row input{width:100%;accent-color:#a9ecc6}.results-panel{background:linear-gradient(145deg,#173b37,#0d2831);border-color:#457669}.results-panel .amount{font-size:31px;font-weight:740;letter-spacing:-.05em;margin:9px 0}.results-panel small{display:block;font-size:11px;color:#a4c3b7;line-height:1.6}.taxrow{padding:13px 0;border-bottom:1px solid #41645d}.taxrow:last-child{border-bottom:0}.taxrow strong{font-size:13px;color:#e8fcef}.calculation-note{font-size:11px;color:#acc2ca;line-height:1.95;margin-top:14px}
+.checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{display:flex;gap:12px;align-items:flex-start;padding:17px;border:1px solid #355060;border-radius:10px;background:#132737;cursor:pointer}.check input{accent-color:var(--mint);width:17px;height:17px;flex:none;margin:2px 0 0}.check span{color:#c0d1d2;font-size:11px;line-height:1.8}.check b{color:#e8f6ed}.check:has(input:checked){border-color:#437c69;background:#183b33}.progress{display:flex;align-items:center;gap:15px;margin:22px 0}.bar{height:8px;border-radius:9px;background:#243c48;overflow:hidden;flex:1}.bar>div{height:100%;background:#a3eac1;width:0;transition:width .2s}.progress small{font-size:11px;color:#a9cbc3;min-width:82px;text-align:right}.reset{border:1px solid #4b6570;background:#132b3a;color:#c3ded5;padding:10px 16px;border-radius:9px;font-size:11px}
+details{background:#102534;border:1px solid #2e4b59;border-radius:10px;padding:18px 20px;margin-bottom:10px}summary{cursor:pointer;font-size:12px;font-weight:680;color:#e0f4ed}details p{margin:13px 0 0;color:#b0c2cc;line-height:1.9;font-size:11px}
+.refs{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ref{padding:15px;border:1px solid #324e5a;background:#122837;border-radius:9px;text-decoration:none;display:flex;align-items:flex-start;gap:10px}.ref span{color:#a8eed1;background:#1a4841;border-radius:5px;padding:5px 7px;font-size:10px;white-space:nowrap}.ref div{min-width:0}.ref b{font-size:11px;color:#e0f1e9}.ref small{display:block;color:#8eaeb2;line-height:1.65;margin-top:6px}.ref:hover{border-color:#70ad9a}
+.footer{padding:35px 0 55px;border-top:1px solid #2b4854;color:#91a9af;font-size:11px;line-height:2}.footer-row{display:flex;justify-content:space-between;gap:25px}.foot-brand{font-weight:760;color:#c4eada}
+@media(max-width:1000px){.hero{gap:25px}.ka-layout{grid-template-columns:1fr}.nav{gap:12px}}
+@media(max-width:780px){.max{width:min(100% - 30px,640px)}.topbar{height:65px}.nav a:not(.repo){display:none}.hero{grid-template-columns:1fr;padding:55px 0 43px}.hero h1{font-size:40px}.hero-visual{padding:20px}.grid2,.grid3,.two-track,.sim,.checklist,.refs{grid-template-columns:1fr}.section-top{align-items:start}.side-note{display:none}section.block{padding:41px 0}.segment{grid-template-columns:1fr}.choice{padding:11px 14px}.choice small{margin-top:3px}.metric-grid{grid-template-columns:1fr}.ka-controls ol{grid-template-columns:1fr}.footer-row{flex-direction:column;gap:3px}}
+@media(max-width:420px){.hero h1{font-size:35px}.ka-map{grid-template-columns:1fr 31px 1fr;gap:5px}.ka-node{padding:16px 4px}.ka-node strong{font-size:17px}.ka-arrow{font-size:25px}.visual-flow{grid-template-columns:1fr 25px 1fr}.card,.content-panel,.ka-canvas,.option-col{padding:19px}.form-panel,.results-panel{padding:17px}}
+@media print{body{background:white;color:#14202a}.topbar,.hero-actions,.radio-card,.reset{display:none}.card,.content-panel,.track,.results-panel{color:#123!important;break-inside:avoid}section.block{page-break-inside:avoid}}
 </style>
-  
 </head>
 <body>
-  <a class="skip-link" href="#main">跳转到正文</a>
-  <div class="site-shell">
-    <aside class="sidebar" aria-label="章节导航">
-      <a class="brand" href="#top" aria-label="返回顶部">
-        <img class="brand-logo" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20role%3D%22img%22%20aria-labelledby%3D%22title%22%3E%0A%3Ctitle%3E%E8%B7%A8%E5%A2%83%E8%B4%A6%E6%A1%A5%20BorderLedger%20%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87%3C%2Ftitle%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%22bridge%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%220%22%3E%3Cstop%20stop-color%3D%22%23a9edc6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23aab8ff%22%2F%3E%3C%2FlinearGradient%3E%0A%3C%2Fdefs%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2215%22%20fill%3D%22%230b1728%22%2F%3E%0A%3Crect%20x%3D%221.25%22%20y%3D%221.25%22%20width%3D%2261.5%22%20height%3D%2261.5%22%20rx%3D%2213.75%22%20fill%3D%22none%22%20stroke%3D%22%232b3e51%22%20stroke-width%3D%221.5%22%2F%3E%0A%3Cpath%20d%3D%22M16%2047V30%22%20stroke%3D%22%23a9edc6%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M48%2047V30%22%20stroke%3D%22%23aab8ff%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M16%2030C19.7%2014.5%2044.3%2014.5%2048%2030%22%20fill%3D%22none%22%20stroke%3D%22url%28%23bridge%29%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M15%2047H49%22%20fill%3D%22none%22%20stroke%3D%22%23e7f7fb%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M29%2036h6%22%20stroke%3D%22%23e7f7fb%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E" alt="" width="38" height="38" />
-        <span class="brand-wordmark">BORDER<span class="brand-second">LEDGER</span><small>跨境账桥 · 美港合规工作台</small></span>
-      </a>
-      <div class="side-caption">WORKSPACE / 01</div>
-      <nav class="side-nav" aria-label="页面章节">
-        <a href="#overview" class="active"><span>01</span> 总览</a>
-        <a href="#flow"><span>02</span> 资金路径</a>
-        <a href="#models"><span>03</span> 合作模式</a>
-        <a href="#calculator"><span>04</span> 税负测算</a>
-        <a href="#compliance"><span>05</span> 执行清单</a>
-        <a href="#faq"><span>06</span> 常见问题</a>
-        <a href="#sources"><span>07</span> 官方来源</a>
-      </nav>
-      <div class="sidebar-bottom">
-        <div class="side-status"><span class="pulse"></span> 独立公司合作场景</div>
-        <p>信息更新：2026 年 10 月<br />数据仅保存在当前浏览器</p>
-      </div>
-    </aside>
+<header class="topbar"><div class="max top-inner"><a class="brand" href="#top"><img class="logo" src="./favicon.svg" alt="BorderLedger Logo"><span class="brand-copy"><strong>跨境账桥 · BorderLedger</strong><small>PAYMENTS / COMPLIANCE WORKBENCH</small></span></a><nav class="nav" aria-label="页面导航"><a href="#brands">产品边界</a><a href="#collection">平台收款</a><a href="#ka">KA 转账</a><a href="#tax">独立税务</a><a href="#checklist">执行清单</a><a class="repo" href="https://github.com/TempleHao/borderledger" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
+<main id="top" class="max">
+<section class="hero" aria-labelledby="hero-title"><div><div class="kicker">US × HONG KONG · TIKTOK SHOP</div><h1 id="hero-title">资金链路更短。<br><em>权属边界更清楚。</em></h1><p class="lede">引入 Zyla 美国账户和万里汇 WorldFirst 香港账户，以及 KA 大客户单向账户互转机制，重新设计 TikTok Shop US 的收款与跨境商业付款架构。税务继续独立建模，不能由收款工具替代。</p><div class="hero-actions"><a class="btn main" href="#collection">配置收款路线 →</a><a class="btn" href="#ka">查看 KA 单向互转 ↗</a></div><p class="tiny">行业研究与方案设计 · 2026 年 10 月。部分 KA 能力基于客户提供的产品设定，实际准入以专属客户经理和平台审核为准。</p><div class="pills"><span class="pill">美国：Zyla</span><span class="pill">香港：WorldFirst</span><span class="pill">KA 通道：二选一</span><span class="pill">收付 ≠ 报税</span></div></div>
+<div class="hero-visual" aria-label="美港支付工具架构预览"><div class="visual-head"><span>COLLECTION & TRANSFER INFRASTRUCTURE</span><b>MODEL v2.1</b></div><div class="visual-flow"><div class="visual-box"><span>US ACCOUNT</span><strong>Zyla</strong></div><div class="visual-arrow">⇆</div><div class="visual-box"><span>HK ACCOUNT</span><strong>WorldFirst</strong></div></div><div class="visual-route"><strong>KA 配置只能选择一个箭头方向</strong><br>US → HK 或 HK → US</div><p class="visual-annotation">TikTok Shop 收款绑定 ≠ Zyla / 万里汇的账户间转账 ≠ 销售款归属 ≠ 税务缴纳。四个环节分别审查。</p></div></section>
 
-    <div class="content-wrap" id="top">
-      <header class="topbar">
-        <div class="mobile-brand"><img class="mobile-logo" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20role%3D%22img%22%20aria-labelledby%3D%22title%22%3E%0A%3Ctitle%3E%E8%B7%A8%E5%A2%83%E8%B4%A6%E6%A1%A5%20BorderLedger%20%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87%3C%2Ftitle%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%22bridge%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%220%22%3E%3Cstop%20stop-color%3D%22%23a9edc6%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23aab8ff%22%2F%3E%3C%2FlinearGradient%3E%0A%3C%2Fdefs%3E%0A%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2215%22%20fill%3D%22%230b1728%22%2F%3E%0A%3Crect%20x%3D%221.25%22%20y%3D%221.25%22%20width%3D%2261.5%22%20height%3D%2261.5%22%20rx%3D%2213.75%22%20fill%3D%22none%22%20stroke%3D%22%232b3e51%22%20stroke-width%3D%221.5%22%2F%3E%0A%3Cpath%20d%3D%22M16%2047V30%22%20stroke%3D%22%23a9edc6%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M48%2047V30%22%20stroke%3D%22%23aab8ff%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M16%2030C19.7%2014.5%2044.3%2014.5%2048%2030%22%20fill%3D%22none%22%20stroke%3D%22url%28%23bridge%29%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M15%2047H49%22%20fill%3D%22none%22%20stroke%3D%22%23e7f7fb%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M29%2036h6%22%20stroke%3D%22%23e7f7fb%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E" alt="" width="30" height="30" /><strong>跨境账桥 <span class="mobile-brand-en">BorderLedger</span></strong></div>
-        <div class="topbar-left"><span class="breadcrumbs">BORDERLEDGER / CROSS-BORDER OPERATIONS</span><span class="separator">/</span><span>US ↔ HK</span></div>
-        <div class="top-actions"><span class="top-dot"></span><span class="edition">2026 · 研究版</span><button class="icon-button" type="button" id="print-page" title="打印或存为 PDF" aria-label="打印页面">↗</button></div>
-      </header>
+<section class="block" id="brands"><div class="section-top"><div><div class="eyebrow">01 / BRAND ARCHITECTURE</div><h2>先区分品牌，再谈能力</h2><p class="intro">Zyla 是美国市场产品品牌；WorldFirst（万里汇）是香港等市场使用的产品品牌。它们在集团支付网络下可以存在互通机制，但条款和开户主体不能混写。</p></div><span class="side-note">VERIFIED PRODUCT SCOPE</span></div>
+<div class="grid2"><article class="card"><span class="badge">美国产品 / US</span><div class="brand-name">Zyla <small>Account</small></div><p>Zyla 由 <strong>AUS Merchant Services, Inc.</strong> 提供账户服务。官网有 TikTok Shop US 收款指南，允许申请 USD 收款账户并填写 Seller Center 结算详情。</p><div class="rule"></div><div class="key">边界</div><p>账户属于经审核登记的美国客户实体，不能将账户权益让与独立第三方，也不能用于第三方的经营活动。官网列示纽约州、内华达州不提供服务，弗吉尼亚州有限制。</p><a class="source-link" href="https://www.zyla.com/help-center/receiving-money-from-marketplaces/tiktokshop/" target="_blank" rel="noopener">Zyla 官方 TikTok 指南 ↗</a></article>
+<article class="card"><span class="badge amber">香港产品 / HK</span><div class="brand-name">WorldFirst <small>万里汇</small></div><p>万里汇账户提供跨境收款和付款工具。官方“错名收款”指引显示存在修改店铺持有人的操作，要求店铺持有人与真实开店主体匹配。</p><div class="rule"></div><div class="key">边界</div><p>修改店铺持有人≠修改万里汇主账户开户主体，也不必然改变资金所有权。特别是<strong>香港公司与美国公司彼此独立</strong>时，还要单独确认 TikTok US 平台出款规则、资金归属与合同责任。</p><a class="source-link" href="https://www.worldfirst.com.cn/content/articles/rlny8jsi/uuyf4tgh" target="_blank" rel="noopener">万里汇持有人规则 ↗</a></article></div>
+<div class="statement"><div class="mark">≠</div><div><strong>产品能力、商户资格、税务义务三者分开</strong><p>收款成功不等于替独立公司代收获得授权；KA 白名单不等于交易免税；资金从美国到账香港也不意味着所得税由万里汇或 Zyla 代办。网站所有路径均以真实交易和独立税务为前提。</p></div></div></section>
 
-      <main id="main">
-        <section class="hero" id="overview" aria-labelledby="hero-title">
-          <div class="hero-copy">
-            <div class="eyebrow"><span class="eyebrow-mark"></span> BORDERLEDGER / TIKTOK SHOP / US × HK <span class="tag">OPERATIONS GUIDE</span></div>
-            <h1 id="hero-title">美国店铺的资金，<br /><span class="gradient-text">怎样合规流向香港？</span></h1>
-            <p class="hero-lead">收款有路径，付款有依据，税务有底稿。面向美国 TikTok Shop 经营主体与独立香港合作公司，将结算、采购、服务费、报税与交易凭证整合在同一张业务地图。</p>
-            <div class="hero-buttons"><a href="#calculator" class="btn btn-primary">开始测算 <span aria-hidden="true">↗</span></a><a href="#flow" class="btn btn-ghost">查看资金路径 <span aria-hidden="true">→</span></a></div>
-            <div class="hero-foot"><span class="status-good">●</span> 假设：两家公司完全独立，存在真实业务合同 <span class="hero-line"></span> <span>US corporate seller</span></div>
-          </div>
-          <div class="hero-visual" role="img" aria-label="从美国店铺结算账户按合同向香港合作公司支付费用的概念图">
-            <div class="world-dots"></div>
-            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-            <div class="visual-header"><span class="visual-micro">PAYMENT ARCHITECTURE</span><span>01 / 03</span></div>
-            <div class="country-node us-node"><span class="node-flag">US</span><div><b>U.S. ENTITY</b><small>SHOP / SETTLEMENT</small></div><span class="node-arrow">↗</span></div>
-            <div class="flow-path"><i></i><i></i><i></i><span class="flow-label">COMMERCIAL PAYMENT</span></div>
-            <div class="country-node hk-node"><span class="node-flag hk-flag">HK</span><div><b>HONG KONG CO.</b><small>SUPPLIER / SERVICES</small></div><span class="node-arrow">↙</span></div>
-            <div class="visual-bottom"><span>TRACEABLE</span><span class="mini-rule"></span><span>DOCUMENTED</span><span class="mini-rule"></span><span>COMPLIANT</span></div>
-          </div>
-        </section>
+<section class="block" id="collection"><div class="section-top"><div><div class="eyebrow">02 / TIKTOK SHOP SETTLEMENT</div><h2>第一层：美国店铺向哪里结算？</h2><p class="intro">这是平台订单的收款环节，和下面的 KA 账户间互转是两个不同的问题。点击切换方案，税务计算不受这一选择影响。</p></div><span class="side-note">CHOOSE A RECEIVING RAIL</span></div>
+<div class="segment" role="group" aria-label="TikTok Shop 收款路线">
+<button class="choice" type="button" data-settle="zyla" aria-pressed="true"><b>A · 美国公司 → Zyla</b><small>官方公开操作路径 / 优先评估</small></button>
+<button class="choice" type="button" data-settle="wf" aria-pressed="false"><b>B · 香港 WorldFirst</b><small>修改店铺持有人 / 逐案核准</small></button>
+<button class="choice" type="button" data-settle="bank" aria-pressed="false"><b>C · 美国公司银行</b><small>传统同名 ACH 结算</small></button>
+</div>
+<div class="content-panel" aria-live="polite"><div class="title-row"><span class="badge" id="settle-status">公开规则支持</span><span class="key" id="settle-code">A / STANDARD</span></div><h3 id="settle-title">美国公司 → 自身 Zyla 收款账户</h3><p id="settle-desc">TikTok Shop US 美国开店主体，使用自身登记的 Zyla USD 收款账户收取平台结算款。</p><div class="metric-grid"><div class="metric"><small>01 / 店铺销售方</small><strong>美国公司</strong><p>订单收入依法确认</p></div><div class="metric"><small>02 / 结算账户</small><strong id="settle-target">Zyla / 美国公司</strong><p id="settle-target-note">平台核验名称和 ACH 参数</p></div><div class="metric"><small>03 / 资金权属</small><strong>按真实合同判断</strong><p>账户名称与资金归属不能混为一谈</p></div></div><div class="callout" id="settle-warning">美国公司与 Zyla 账户登记客户须一致，平台和服务商仍有权进行身份、行业和地区审核。</div></div>
+</section>
 
-        <div class="intro-note" role="note"><span class="note-glyph">i</span><div><strong>核心原则</strong><p>平台款项先由美国店铺主体收取；随后，美国公司凭真实采购或服务合同向独立香港公司付款。所得税按适用税法核算，与收款路径分开判断。</p></div></div>
+<section class="block" id="ka"><div class="section-top"><div><div class="eyebrow">03 / KEY ACCOUNT FUND TRANSFER</div><h2>第二层：Zyla ↔ 香港万里汇</h2><p class="intro">针对 KA 大客户，由客户经理为特定账户和收款对象配置定向互转。按照已知产品约束，<strong style="color:#cef5dc">一次只可选择一种方向</strong>，不能把两向同时标为已启用。</p></div><span class="side-note">ONE ACTIVE DIRECTION</span></div>
+<div class="ka-layout"><div class="option-col"><div class="eyebrow">SELECT DIRECTION / 单选</div><h3 style="font-size:20px;margin:0 0 16px">一个 KA 配置，一条出款方向</h3><label class="radio-card"><input type="radio" name="ka-direction" value="us-hk" checked><span>Zyla 美国 → 香港 WorldFirst<small>美国主体账户向香港合作方付款 / 履行合同</small></span></label><label class="radio-card"><input type="radio" name="ka-direction" value="hk-us"><span>香港 WorldFirst → 美国 Zyla<small>香港合作方向美国公司进行有商业依据的付款</small></span></label><div class="ka-single">● 当前只启用所选方向；反向需重新评估 KA 配置</div><div class="rule"></div><p class="intro">公开依据：万里汇发布了<strong>香港万里汇 → Zyla</strong>转账教程；Zyla 文档出现 WorldFirst 账户类型。关于特定 KA 账户的<strong>反向开通资格及二选一配置规则</strong>，以客户提供的产品机制及客户经理审核为准。</p></div>
+<div class="ka-canvas" aria-live="polite"><div class="ka-label" id="ka-direction-label">KA / US → HK / SINGLE ROUTE</div><div class="ka-map"><div class="ka-node"><small>美国公司账户</small><strong>Zyla</strong><em>US</em></div><div class="ka-arrow" id="ka-arrow">→</div><div class="ka-node"><small>香港公司账户</small><strong>WorldFirst</strong><em>HK</em></div></div><p class="ka-caption" id="ka-caption">美国公司作为付款方，向独立香港公司支付已确认的合同货款或服务费用。</p><div class="key" id="ka-accounting" style="text-align:center">US：结清应付款 ｜ HK：确认对应销售或服务应收款</div></div></div>
+<div class="ka-controls"><strong>KA 通道的上线条件</strong><ol><li>专属客户经理确认账户、地区及单向白名单资格。</li><li>明确是 WorldFirst → Zyla 还是 Zyla → WorldFirst，按批准方向执行。</li><li>准备美国与香港两家公司 KYC、UBO、交易合同、发票、货运或服务证明。</li><li>保留平台流水、转账凭证、汇率记录及两家公司账簿，预先核对税务与预提税。</li></ol></div>
+<div class="warn"><strong>不能推导的结论：</strong>KA 允许账户间划转，不表示可以把美国公司全部营业额无合同地转至香港；也不表示香港公司自动取得销售款所有权、美国公司不再承担申报义务或收款工具替客户代缴所得税。即便同集团支付网络内部，也应按两家独立公司的真实交易分类。</div>
+</section>
 
-        <section class="section" aria-labelledby="at-glance-title">
-          <div class="section-head compact"><div><div class="section-kicker">KEY INDICATORS</div><h2 id="at-glance-title">先掌握三个税务边界</h2></div><span class="section-meta">条件适用 · 非普遍税率</span></div>
-          <div class="metric-grid">
-            <article class="metric-card"><div class="metric-top"><span>美国联邦 C-Corp 税率</span><span class="metric-symbol">↗</span></div><div class="metric-value">21<span>%</span></div><div class="metric-detail">作用于应税利润，州税另行核算</div></article>
-            <article class="metric-card"><div class="metric-top"><span>香港公司首档利得税率</span><span class="metric-symbol">◇</span></div><div class="metric-value">8.25<span>%</span></div><div class="metric-detail">合资格首 HK$200 万应评税利润</div></article>
-            <article class="metric-card"><div class="metric-top"><span>平台结算账户</span><span class="metric-symbol">◎</span></div><div class="metric-value text-metric">主体同名</div><div class="metric-detail">企业店铺通常需绑定自身企业账户</div></article>
-          </div>
-        </section>
+<section class="block" id="accounting"><div class="section-top"><div><div class="eyebrow">04 / TWO LEDGERS · TWO WORKFLOWS</div><h2>收款轨道与税务轨道并行</h2><p class="intro">TikTok 平台收款、KA 余额转移、对外合同结算和企业纳税各自有独立证据链。</p></div></div><div class="two-track"><div class="track"><label>PAYMENT / COLLECTION</label><h3>支付工具处理资金</h3><p>① TikTok 订单与结算 → ② 已核准的 Zyla、WorldFirst 或银行账户 → ③ 如需要，选定 KA 单向转账 → ④ 对应采购、服务、借贷或其他真实往来记账。</p></div><div class="track"><label>TAX / FILINGS</label><h3>税代处理税务</h3><p>① 美国公司依法核算营业收入和费用 → ② CPA / EA 确定联邦所得税、州税与预提税 → ③ 按时申报并支付税款 → ④ 香港公司根据实际应评税利润另行申报。</p></div></div><div class="statement"><div class="mark">T</div><div><strong>万里汇管收付，税务须单独考虑</strong><p>Zyla / WorldFirst 的产品角色是收款、兑换与合规付款，不负责替客户制定税务结构或自动完成税款申报。工具变更对税基没有直接的机械影响；真正影响税务的是实体、货权、交易定价、服务履行地等事实。</p></div></div></section>
 
-        <section class="section" id="flow" aria-labelledby="flow-title">
-          <div class="section-head"><div><div class="section-kicker">01 / CASH MOVEMENT</div><h2 id="flow-title">资金流向，一眼看清</h2><p>把商业交易和纳税环节分开管理，保留完整银行流水与交易证据。</p></div><span class="section-meta">RECOMMENDED ROUTE</span></div>
-          <div class="flow-board">
-            <div class="flow-board-top"><span class="flow-id">FLOW 01—04</span><span class="flow-valid"><span>●</span> STANDARD ROUTE</span></div>
-            <div class="flow-grid">
-              <div class="flow-step"><span class="step-index">01 / CHECKOUT</span><div class="flow-icon">▣</div><h3>美国消费者</h3><p>在 TikTok Shop 下单付款</p></div>
-              <div class="flow-divider" aria-hidden="true">→</div>
-              <div class="flow-step emphasis"><span class="step-index">02 / SETTLEMENT</span><div class="flow-icon">▤</div><h3>美国公司账户</h3><p>以入驻主体名义完成结算</p></div>
-              <div class="flow-divider" aria-hidden="true">→</div>
-              <div class="flow-step"><span class="step-index">03 / CONTRACT</span><div class="flow-icon">⇄</div><h3>香港合作公司</h3><p>凭供货或服务交易收取费用</p></div>
-            </div>
-            <div class="flow-tax-lane"><span class="line-guide"></span><span class="flow-tax-icon">▦</span><div><strong>并行处理税务与账务</strong><p>美国主体独立记账、提交税表、预留并支付适用税款；香港公司独立核算与报税。</p></div><span class="tax-lane-label">TAX / AUDIT TRAIL</span></div>
-          </div>
-          <p class="under-board"><span>!</span> 避免将美国店铺的整笔销售款无交易依据地直接划至独立香港公司；平台同名核验与银行审查均需考虑。</p>
-        </section>
+<section class="block" id="tax"><div class="section-top"><div><div class="eyebrow">05 / TAX INDEPENDENT SIMULATOR</div><h2>税负模型：不因收款路线改变</h2><p class="intro">仅以美国 C-Corp 与独立香港有限公司作教学模拟。商品成本、经营费用和香港公司提供的<strong>真实服务</strong>决定两家公司的利润；支付路径选择不改变公式。</p></div><span class="side-note">ILLUSTRATIVE MODEL / USD</span></div>
+<div class="sim"><div class="form-panel"><div class="slider-row"><label for="sales">美国 TikTok Shop 年销售收入 <strong id="sales-val">$1,000,000</strong></label><input id="sales" type="range" min="200000" max="2500000" step="50000" value="1000000"></div><div class="slider-row"><label for="uscost">美国商品、广告及其他经营成本 <strong id="uscost-val">$800,000</strong></label><input id="uscost" type="range" min="0" max="1500000" step="10000" value="800000"></div><div class="slider-row"><label for="hkfee">真实应付香港公司的服务费 <strong id="hkfee-val">$80,000</strong></label><input id="hkfee" type="range" min="0" max="300000" step="5000" value="80000"></div><div class="slider-row" style="margin:0"><label for="hkcost">香港公司履约实际成本 <strong id="hkcost-val">$50,000</strong></label><input id="hkcost" type="range" min="0" max="300000" step="5000" value="50000"></div><p class="calculation-note">如费用只是代收转账、并无真实服务，不可仅凭转账金额在美国列支。示例不含美国州税、进口税、销售税、外国股东/穿透实体规定、预提税及税务调整。</p></div>
+<div class="results-panel"><div class="key">TAX ESTIMATE / EXCLUDES PAYMENT ROUTES</div><div class="taxrow"><small>美国公司模拟利润</small><div class="amount" id="us-profit">$120,000</div><small>美国联邦 C-Corp 所得税 21%</small><strong id="us-tax">$25,200</strong></div><div class="taxrow"><small>香港公司模拟利润</small><div class="amount" id="hk-profit">$30,000</div><small>香港利得税：符合条件的首 HK$200 万 8.25%，超出部分 16.5%（按 7.8 HKD/USD 示意换算）</small><strong id="hk-tax">$2,475</strong></div><div class="taxrow"><small>两家企业所得税之和（示意）</small><div class="amount" id="total-tax">$27,675</div></div><small>亏损情形不做递延、抵免或亏损结转处理。香港离岸利润认定、两级税率资格与美国纳税身份须由税务专业人士评估。</small></div></div></section>
 
-        <section class="section" id="models" aria-labelledby="models-title">
-          <div class="section-head"><div><div class="section-kicker">02 / COMMERCIAL STRUCTURE</div><h2 id="models-title">香港公司可以扮演什么角色？</h2><p>请选择实际合作方式，查看对应的单据、税务逻辑与风险。</p></div></div>
-          <div class="model-layout">
-            <div class="model-tabs" role="tablist" aria-label="香港合作模式">
-              <button class="model-tab active" type="button" role="tab" id="tab-trade" aria-controls="model-panel" aria-selected="true" data-model="trade"><span class="tab-numb">01</span><span class="tab-text"><b>采购 / 供货</b><small>GOODS & INVENTORY</small></span><span class="tab-arrow">↗</span></button>
-              <button class="model-tab" type="button" role="tab" id="tab-service" aria-controls="model-panel" aria-selected="false" data-model="service" tabindex="-1"><span class="tab-numb">02</span><span class="tab-text"><b>境外运营服务</b><small>OPERATIONS & SUPPORT</small></span><span class="tab-arrow">↗</span></button>
-              <button class="model-tab" type="button" role="tab" id="tab-collect" aria-controls="model-panel" aria-selected="false" data-model="collect" tabindex="-1"><span class="tab-numb">03</span><span class="tab-text"><b>委托代收款</b><small>COLLECTION ARRANGEMENT</small></span><span class="tab-arrow">↗</span></button>
-            </div>
-            <div class="model-detail" id="model-panel" role="tabpanel" aria-labelledby="tab-trade" tabindex="0" aria-live="polite">
-              <div class="detail-top"><span class="detail-status good" id="model-risk">优先考虑</span><span class="detail-num" id="model-count">MODEL / 01</span></div>
-              <h3 id="model-title">香港公司作为真实供货商</h3>
-              <p id="model-description">香港公司向工厂采购或组织供应链，再按合同向美国公司销售商品。美国公司作为 TikTok Shop 销售方，确认相应收入及符合条件的销售成本。</p>
-              <div class="detail-lists"><div><h4>交易证据</h4><ul id="model-docs"><li>采购合同与商业发票</li><li>付款凭证与货权转移记录</li><li>物流、报关和库存台账</li></ul></div><div><h4>税务关注点</h4><ul id="model-cautions"><li>存货成本通常随销售结转</li><li>关税、进口人身份另行判断</li><li>香港利润来源需按事实判定</li></ul></div></div>
-              <div class="detail-footer" id="model-tip">适用场景：香港公司真正承担采购、供货与相应商业风险。</div>
-            </div>
-          </div>
-        </section>
+<section class="block" id="checklist"><div class="section-top"><div><div class="eyebrow">06 / EXECUTION GATES</div><h2>上线前必须过的十二道检查</h2><p class="intro">完成收款接入和 KA 加白前，建议逐项取得书面记录。勾选状态只保存在当前浏览器，不会上传 GitHub。</p></div></div><div class="checklist" id="check-items">
+<label class="check"><input type="checkbox"><span><b>美国开店主体</b>：TikTok 卖家营业执照、EIN、真实销售方与店铺资料一致。</span></label>
+<label class="check"><input type="checkbox"><span><b>平台结算审核</b>：确认 ACH、受益人名称及银行账户主体符合 TikTok US 规则。</span></label>
+<label class="check"><input type="checkbox"><span><b>Zyla 美国主体资格</b>：核对地区与行业适用性，并完成开户及 KYC。</span></label>
+<label class="check"><input type="checkbox"><span><b>香港万里汇主体</b>：核查主账户开户企业、产品地区及收款功能。</span></label>
+<label class="check"><input type="checkbox"><span><b>持有人修改</b>：如采用香港账户绑定美国店铺，取得万里汇与 TikTok 对具体组合的书面同意。</span></label>
+<label class="check"><input type="checkbox"><span><b>KA 白名单</b>：专属客户经理确认通道、两侧账户、准入条件及限额。</span></label>
+<label class="check"><input type="checkbox"><span><b>KA 单向选择</b>：明确本次只开通一个方向，不假设双向可同时使用。</span></label>
+<label class="check"><input type="checkbox"><span><b>商业法律关系</b>：独立美港公司签署真实采购、服务、代收或借贷协议。</span></label>
+<label class="check"><input type="checkbox"><span><b>交易与 KYC 凭证</b>：发票、货运或服务成果、UBO、交易用途等证据留存。</span></label>
+<label class="check"><input type="checkbox"><span><b>独立账簿对账</b>：TikTok、Zyla、WorldFirst、银行及两家公司科目可相互核对。</span></label>
+<label class="check"><input type="checkbox"><span><b>美国税代</b>：CPA / EA 确认所得税、州税、预提税、信息申报与纳税时点。</span></label>
+<label class="check"><input type="checkbox"><span><b>香港税务</b>：香港税务顾问审查实际来源利润、利得税和申报义务。</span></label>
+</div><div class="progress"><div class="bar" role="progressbar" aria-label="材料核验进度" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" id="check-progress"><div id="bar-fill"></div></div><small id="check-note">0 / 12 完成</small></div><button class="reset" type="button" id="reset-check">清空勾选</button></section>
 
-        <section class="section" id="calculator" aria-labelledby="calculator-title">
-          <div class="section-head"><div><div class="section-kicker">03 / SCENARIO ENGINE</div><h2 id="calculator-title">双地区税负 · 交互测算</h2><p>自行输入年度数据，实时查看两家公司分别可能产生的税额。</p></div><button class="text-button" type="button" id="reset-calculator">↺ 恢复示例</button></div>
-          <div class="calculator-layout">
-            <form class="calc-inputs" id="tax-form">
-              <div class="calc-form-head"><span>INPUT / YEARLY DATA</span><strong>金额单位：USD</strong></div>
-              <label class="field"><span>美国公司税务身份</span><select id="entity"><option value="c-corp">C-Corp / 选择按公司纳税的 LLC</option><option value="llc">穿透纳税 LLC / 税负需个案判断</option></select></label>
-              <div class="field"><label for="revenue">美国店铺年度净销售收入 <span class="field-help" title="扣除退款后的营业收入，不含代平台收取的销售税">ⓘ</span></label><div class="input-currency"><span>$</span><input id="revenue" name="revenue" type="number" min="0" step="1000" value="1000000" inputmode="decimal" /></div><input class="range" type="range" id="revenue-range" min="0" max="3000000" step="10000" value="1000000" aria-label="调整年度净销售收入" /></div>
-              <div class="field"><label for="us-cost">美国公司其他可扣除成本与费用</label><div class="input-currency"><span>$</span><input id="us-cost" name="us-cost" type="number" min="0" step="1000" value="800000" inputmode="decimal" /></div><input class="range" type="range" id="us-cost-range" min="0" max="3000000" step="10000" value="800000" aria-label="调整美国公司其他成本" /></div>
-              <div class="field"><label for="hk-fee">美国公司付给香港公司的合规服务费</label><div class="input-currency"><span>$</span><input id="hk-fee" name="hk-fee" type="number" min="0" step="1000" value="80000" inputmode="decimal" /></div><input class="range" type="range" id="hk-fee-range" min="0" max="1000000" step="5000" value="80000" aria-label="调整香港服务费" /></div>
-              <div class="field"><label for="hk-cost">香港公司提供服务的自身成本</label><div class="input-currency"><span>$</span><input id="hk-cost" name="hk-cost" type="number" min="0" step="1000" value="50000" inputmode="decimal" /></div><input class="range" type="range" id="hk-cost-range" min="0" max="1000000" step="5000" value="50000" aria-label="调整香港公司服务成本" /></div>
-              <div class="field"><label for="fx">美元兑港币模拟汇率 <span class="field-help" title="仅供建模，非实时汇率">ⓘ</span></label><div class="input-currency"><span>≈</span><input id="fx" name="fx" type="number" min="0.01" max="100" step="0.01" value="7.8" inputmode="decimal" /></div></div>
-              <div class="calc-caption">注意：服务费必须具有真实商业依据。所有输入为假设数据；美国州税、关税、预提税、抵免和香港利润来源争议均未计入。</div>
-            </form>
-            <div class="calc-results" aria-live="polite" aria-atomic="true">
-              <div class="results-top"><span>SIMULATION OUTPUT</span><span class="result-live"><i></i> LIVE</span></div>
-              <div class="results-primary"><span>两地所得税合计 · 示意</span><strong id="total-tax">$27,675</strong><small id="total-subtitle">在假定美国适用 C-Corp 税制、香港全部利润应税情况下</small></div>
-              <div class="result-separator"></div>
-              <div class="result-item"><div><span class="result-country">US</span><div><strong>美国公司</strong><small>简化应税利润</small></div></div><div class="result-amount"><strong id="us-profit">$120,000</strong><small id="us-tax">联邦税 $25,200</small></div></div>
-              <div class="result-item"><div><span class="result-country hk-result">HK</span><div><strong>香港公司</strong><small>简化应税利润</small></div></div><div class="result-amount"><strong id="hk-profit">$30,000</strong><small id="hk-tax">香港税 $2,475</small></div></div>
-              <div class="reserve-card"><span>美国联邦税预算储备 <span class="small-info">含自设 15% 缓冲</span></span><strong id="reserve">$28,980</strong><small id="reserve-desc">这是预算参考，不代表所有可用现金或法定最低留存额</small></div>
-              <div class="calc-warning" id="calc-warning">税款测算需在税务代理核实实体类型、经营州和扣除凭证后才能用于实际申报。</div>
-              <div class="calc-actions"><button class="btn btn-export" type="button" id="export-case">↓ 导出测算摘要</button><button class="btn btn-muted" type="button" id="copy-case">复制结果</button></div>
-            </div>
-          </div>
-          <div class="formula-band"><span>计算逻辑</span><span>美国简化利润 = 净销售收入 − 其他成本 − 香港服务费</span><span>香港简化利润 = 服务费收入 − 自身成本</span></div>
-        </section>
+<section class="block" id="faq"><div class="section-top"><div><div class="eyebrow">07 / EDGE CASES</div><h2>常见误区</h2></div>
+<details><summary>香港 WorldFirst 修改持有人之后，可以直接给独立美国 TikTok Shop 收款吗？</summary><p>无法一概而论。公开资料能确认“修改店铺持有人”这个产品功能，但不等于 TikTok US 已核准每一种“香港 WorldFirst 主账户 + 独立美国开店主体”的跨实体组合。应由平台、万里汇与合规团队逐案核实，保留书面批准和资金权属依据。</p></details>
+<details><summary>Zyla 与 WorldFirst 的 KA 账户划转真的可以双向转吗？</summary><p>你提供的 KA 机制允许选择两个可能方向，但单个方案只配置其中一个：Zyla → 香港 WorldFirst，或者香港 WorldFirst → Zyla；不能同时启用双向。公开万里汇文档明确存在转至 Zyla 的操作。具体白名单、双方账户准入、费用、汇率及另一个方向以 KA 客户经理核验为准。</p></details>
+<details><summary>香港公司收到转账，是不是就不用美国公司缴税了？</summary><p>不是。美国公司是美国店铺法律销售方时，需要根据适用税法确认其销售收入。独立香港公司可以按真实货物或服务合同收款并独立纳税，单纯资金转移并不改变收入所有权，不能无理由成为税前费用。</p></details>
+<details><summary>WorldFirst 或 Zyla 能帮我完成美国税务申报吗？</summary><p>这里两者只作为支付工具设计。税务申报、税款支付、所得税与预提税分类须委托适当资质的专业人员负责。平台可能代收销售税，也不代表已完成所得税申报。</p></details></section>
 
-        <section class="section" id="compliance" aria-labelledby="compliance-title">
-          <div class="section-head"><div><div class="section-kicker">04 / EXECUTION CHECKLIST</div><h2 id="compliance-title">上线前需要准备什么？</h2><p>勾选可在当前浏览器中保存。分工明确，才能把日常资金调度和税务申报衔接起来。</p></div><div class="progress-head"><strong id="progress-text">0 / 8</strong><span>ITEMS COMPLETE</span></div></div>
-          <div class="check-grid">
-            <div class="check-card"><div class="check-group-head"><span class="check-icon">A</span><div><h3>美国公司 / Store</h3><small>CONTRACT · BANK · LEDGER</small></div></div>
-              <label class="check-row"><input type="checkbox" data-check="us-account"/><span>使用与 TikTok 入驻公司同名的合规结算账户</span></label>
-              <label class="check-row"><input type="checkbox" data-check="us-ledger"/><span>导出订单、退款、平台费、广告费及银行流水</span></label>
-              <label class="check-row"><input type="checkbox" data-check="us-contract"/><span>签署真实采购或服务合同，形成清晰的费用依据</span></label>
-              <label class="check-row"><input type="checkbox" data-check="us-tax"/><span>确认公司税务分类、注册州及经营州申报义务</span></label>
-            </div>
-            <div class="check-card"><div class="check-group-head"><span class="check-icon hk-check">B</span><div><h3>香港公司 / Partner</h3><small>SUBSTANCE · INVOICES · TAX</small></div></div>
-              <label class="check-row"><input type="checkbox" data-check="hk-deliver"/><span>保留交付成果、采购凭证、物流或服务记录</span></label>
-              <label class="check-row"><input type="checkbox" data-check="hk-invoice"/><span>开具商业发票，并核对收付款对应关系</span></label>
-              <label class="check-row"><input type="checkbox" data-check="hk-source"/><span>分析服务实施地点与香港利润来源</span></label>
-              <label class="check-row"><input type="checkbox" data-check="cpa"/><span>委托美国 CPA / EA 审查预提税、申报与缴款</span></label>
-            </div>
-          </div>
-          <div class="progress-track" aria-label="清单完成进度"><div id="progress-bar"></div></div>
-          <div class="check-footer"><span id="progress-note">从账户和合同开始，先把基础材料理顺。</span><button type="button" class="text-button" id="clear-checklist">清空勾选</button></div>
-          <div class="delegate"><div class="delegate-symbol">✳</div><div><h3>税代负责申报，公司保留最终审核权</h3><p>CPA / EA 可提供账务复核、申报表、跨境付款分类、预估税测算及付款指导。公司仍需检查申报数据并保存凭证。C-Corp 如预计年度税款达到 $500，通常存在季度预估税缴款要求。</p></div><a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes" target="_blank" rel="noopener noreferrer">IRS 规则 ↗</a></div>
-        </section>
-
-        <section class="section" id="faq" aria-labelledby="faq-title"><div class="section-head"><div><div class="section-kicker">05 / DECISION NOTES</div><h2 id="faq-title">容易混淆的关键问题</h2></div></div>
-          <div class="faq-list">
-            <details><summary>可以直接把 TikTok 的所有销售款打到香港吗？<span>+</span></summary><p>美国企业店铺的结算银行账户必须符合平台关于企业身份与账户名称的一致性要求。香港公司与美国店铺主体彼此独立时，直接绑定香港公司的银行账户通常无法符合该要求。美国公司正常收款后，可按真实合同支付香港公司货款或服务费。</p></details>
-            <details><summary>美国公司转给香港公司的金额，有法定固定比例吗？<span>+</span></summary><p>没有统一的“可转出百分比”。可支付款项取决于真实合同价格、交付情况、经营资金需求、税务处理及银行合规。不能用任意设置费用的方法转走利润。</p></details>
-            <details><summary>香港公司独立，是否还要关注转让定价？<span>+</span></summary><p>如果双方确实不存在关联关系，通常不适用针对关联方的特定转让定价规则，但普通商业真实性、费用扣除、交易定价和海关估价规则仍适用。若存在共同最终控制或其他关联关系，应重新判断。</p></details>
-            <details><summary>美国公司是 LLC，能直接按 21% 测算吗？<span>+</span></summary><p>不能。单成员 LLC 默认可能被视为税务穿透实体，多成员 LLC 一般默认为合伙企业；是否选择按公司缴税、所有者身份及 ECI 都会改变计算方式。本页 21% 模型仅供 C-Corp 或选择按 C-Corp 纳税且适用该规则的实体使用。</p></details>
-            <details><summary>香港公司收到钱，是不是一定要交 8.25%？<span>+</span></summary><p>8.25% 是合资格公司首 HK$200 万应评税利润的利得税率，不能直接乘以收款总额。利润来源是否位于香港、是否具备两级税率资格、相关费用能否扣除，需要香港税务专业人士判断。</p></details>
-            <details><summary>TikTok 已代收销售税，美国公司还要申报吗？<span>+</span></summary><p>TikTok Shop 美国卖家条款约定，平台在适用的 marketplace facilitator 地区负责计算、代收和缴纳销售税。公司仍需评估州销售税登记和申报义务，平台代缴不替代美国所得税申报。</p></details>
-            <details><summary>香港公司作为供货商，是否一定没有美国税务义务？<span>+</span></summary><p>不能一概而论。若香港公司在美国拥有实质经营活动、人员、库存或其他税务连接，可能涉及美国联邦 Form 1120-F、州级申报或其他税务义务，应由税务专业人士按实际交易和货权结构评估。</p></details>
-            <details><summary>把税款留够后，余额是否就能全部转给香港？<span>+</span></summary><p>不能据此判断。公司还要覆盖退款、平台结算延迟、运营储备、州税、进口税和已发生的合同义务。支付香港公司的款项应与真实应付账款相匹配；单纯的现金余额不足以构成付款依据。</p></details>
-          </div>
-        </section>
-
-        <section class="section sources" id="sources" aria-labelledby="sources-title"><div class="section-head"><div><div class="section-kicker">06 / VERIFIED REFERENCES</div><h2 id="sources-title">规则来源与使用边界</h2><p>优先引用 TikTok Shop、美国 IRS 与香港税务局的公开说明。</p></div><span class="section-meta">OFFICIAL DOCUMENTS</span></div>
-          <div class="source-list">
-            <a href="https://seller-us.tiktok.com/university/essay?knowledge_id=1167036928444174" target="_blank" rel="noopener noreferrer"><span class="source-index">01</span><div><strong>TikTok Shop · Finance & Settlement 101</strong><small>结算账户实名一致与卖家财务基础</small></div><span>↗</span></a>
-            <a href="https://seller-us.tiktok.com/university/essay?knowledge_id=6837891779217153" target="_blank" rel="noopener noreferrer"><span class="source-index">02</span><div><strong>TikTok Shop · Bank account for payouts</strong><small>ACH、企业账户及支付方法更新</small></div><span>↗</span></a>
-            <a href="https://www.irs.gov/instructions/i1120" target="_blank" rel="noopener noreferrer"><span class="source-index">03</span><div><strong>IRS · Instructions for Form 1120</strong><small>美国 C-Corp 21% 联邦税率与申报</small></div><span>↗</span></a>
-            <a href="https://www.irs.gov/individuals/international-taxpayers/source-of-income-personal-service-income" target="_blank" rel="noopener noreferrer"><span class="source-index">04</span><div><strong>IRS · Source of personal service income</strong><small>服务地点通常决定服务收入来源</small></div><span>↗</span></a>
-            <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes" target="_blank" rel="noopener noreferrer"><span class="source-index">05</span><div><strong>IRS · Estimated taxes</strong><small>美国公司季度预估所得税规则</small></div><span>↗</span></a>
-            <a href="https://www.ird.gov.hk/eng/tax/bus_pft.htm" target="_blank" rel="noopener noreferrer"><span class="source-index">06</span><div><strong>Hong Kong IRD · Profits Tax</strong><small>香港利得税两级税率及地域来源原则</small></div><span>↗</span></a>
-            <a href="https://www.irs.gov/instructions/i5472" target="_blank" rel="noopener noreferrer"><span class="source-index">07</span><div><strong>IRS · Instructions for Form 5472</strong><small>适用情况下的外国持有美国实体信息申报</small></div><span>↗</span></a>
-            <a href="https://seller-us.tiktok.com/university/essay?article_type=agreement&knowledge_id=1331308753078058" target="_blank" rel="noopener noreferrer"><span class="source-index">08</span><div><strong>TikTok Shop · US Seller Terms, Section 12</strong><small>平台代收销售税及商家自身税务义务</small></div><span>↗</span></a>
-            <a href="https://www.irs.gov/businesses/international-businesses/foreign-corporation-form-1120-f-filing-responsibilities" target="_blank" rel="noopener noreferrer"><span class="source-index">09</span><div><strong>IRS · Foreign corporations / Form 1120-F</strong><small>香港企业存在美国经营活动时的申报风险</small></div><span>↗</span></a>
-          </div>
-        </section>
-        <div class="disclaimer"><b>重要声明</b><p>本网站为教育性商业分析和简化财务模型，不提供法律、税务或会计意见，也不代表 IRS、香港税务局或 TikTok 官方立场。输入内容只在您的浏览器中计算；不会上传或保存至服务器。制定实际合同、付款或申报方案前，请由熟悉跨境电商的美国注册会计师及香港税务专业人士审核。</p></div>
-        <footer class="footer"><span>BORDERLEDGER / 跨境账桥</span><span>US × HK · TIKTOK SHOP</span><a href="#top">BACK TO TOP ↑</a></footer>
-      </main>
-    </div>
-  </div>
+<section class="block" id="sources"><div class="section-top"><div><div class="eyebrow">08 / EVIDENCE INDEX</div><h2>官方资料与证据层级</h2><p class="intro">官网明确支持的能力以官方指引为准；KA 单向选择规则来自业务侧提供的信息，需以客户经理书面确认为最终版本。</p></div></div>
+<div class="refs">
+<a class="ref" target="_blank" rel="noopener" href="https://www.zyla.com/help-center/receiving-money-from-marketplaces/tiktokshop/"><span>Z1</span><div><b>Zyla · TikTok Shop US 收款指引</b><small>USD 账户与平台结算账户绑定操作</small></div></a>
+<a class="ref" target="_blank" rel="noopener" href="https://www.zyla.com/disclaimer-policies/terms-and-conditions/"><span>Z2</span><div><b>Zyla · 美国账户服务条款</b><small>AUS Merchant Services, Inc.、客户实体及第三方账户使用限制</small></div></a>
+<a class="ref" target="_blank" rel="noopener" href="https://www.worldfirst.com.cn/content/articles/b2b_gbl_portal/transfertoZyla"><span>W1</span><div><b>WorldFirst · 转账至 Zyla 账户</b><small>公开操作指南：香港等万里汇账户向 Zyla 付款</small></div></a>
+<a class="ref" target="_blank" rel="noopener" href="https://www.worldfirst.com.cn/content/articles/rlny8jsi/uuyf4tgh"><span>W2</span><div><b>WorldFirst · 修改店铺持有人</b><small>错名收款整改、持有人比对及真实开店主体</small></div></a>
+<a class="ref" target="_blank" rel="noopener" href="https://developers.zyla.com/docs/zyla-developer-doc/zyla_enterprise_solution/appendix"><span>Z3</span><div><b>Zyla · Enterprise 数据字段</b><small>公开文档出现 WORLDFIRST 受益人账户类型，不能据此推定所有 KA 配置已批准</small></div></a>
+<a class="ref" target="_blank" rel="noopener" href="https://seller-us.tiktok.com/university/essay?knowledge_id=1167036928444174"><span>T1</span><div><b>TikTok Shop US · Finance & Settlement 101</b><small>开户者名称匹配与平台结算要求</small></div></a>
+<a class="ref" target="_blank" rel="noopener" href="https://www.irs.gov/instructions/i1120"><span>US</span><div><b>IRS · Form 1120 Instructions</b><small>美国 C-Corp 所得税及申报基础</small></div></a>
+<a class="ref" target="_blank" rel="noopener" href="https://www.ird.gov.hk/eng/faq/2tr.htm"><span>HK</span><div><b>香港税务局 · 两级制利得税税率</b><small>符合资格的公司首 HK$200 万 8.25%，其后 16.5%</small></div></a>
+</div></section>
+</main>
+<footer class="footer"><div class="max footer-row"><div><span class="foot-brand">跨境账桥 · BorderLedger</span><br>收款有路径，付款有依据，税务有底稿。</div><div>独立研究工具 · 无支付、报税或账户连接功能<br>内容仅供商业研究，不构成法律、税务或产品准入保证。</div></div></footer>
 <script>
-(function () {
-  'use strict';
-
-  const $ = (selector) => document.querySelector(selector);
-  const $$ = (selector) => [...document.querySelectorAll(selector)];
-  const usd = (value) => new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
-  const safe = (n) => Number.isFinite(n) ? Math.max(0, n) : 0;
-  const get = (id) => safe(Number($('#' + id).value));
-  const models = {
-    trade: {
-      status:'优先考虑', statusClass:'good', num:'MODEL / 01', title:'香港公司作为真实供货商',
-      description:'香港公司向工厂采购或组织供应链，再按合同向美国公司销售商品。美国公司作为 TikTok Shop 销售方，确认相应收入及符合条件的销售成本。',
-      docs:['采购合同与商业发票','付款凭证与货权转移记录','物流、报关和库存台账'],
-      cautions:['存货成本通常随销售结转','关税、进口人身份另行判断','香港利润来源需按事实判定'],
-      tip:'适用场景：香港公司真正承担采购、供货与相应商业风险。'
-    },
-    service: {
-      status:'常见方案',statusClass:'good',num:'MODEL / 02',title:'香港公司提供真实境外运营服务',
-      description:'香港公司可以承担素材制作、客户支持、广告运营或供应链协调，并按实际服务范围与费用结算。对美国服务付款的收入来源判断，通常关注实际服务地点。',
-      docs:['明确任务及计费方法的服务合同','工单、素材、交付记录与服务地点','服务发票、银行流水及收款主体资料'],
-      cautions:['服务费须真实、合理、具经营必要性','美国境内工作与特许权使用费另行评估','是否应预提税取决于款项性质和来源'],
-      tip:'适用场景：香港公司有实际运营团队或可验证的服务交付。'
-    },
-    collect: {
-      status:'需要谨慎',statusClass:'warning',num:'MODEL / 03',title:'香港公司仅替美国店铺代收',
-      description:'单独由香港公司持有美国公司的销售款，不会改变销售收入归属。若 TikTok 结算账户名称与入驻美国公司不一致，还会面临平台审核风险。',
-      docs:['合法代理或收款协议（如确有必要）','平台书面允许及银行合规确认','独立代收代付明细和往来款对账'],
-      cautions:['美国销售所得通常仍属于美国销售方','代收不可替代采购、服务或利润分配','跨境资金来路及实际受益人须可说明'],
-      tip:'一般建议：由美国店铺主体正常收款，香港公司只收实际应付的商业款项。'
-    }
-  };
-
-  const modelBtns = $$('.model-tab');
-  function showModel(name) {
-    const d = models[name]; if (!d) return;
-    modelBtns.forEach(b => {const active = b.dataset.model === name;b.classList.toggle('active',active);b.setAttribute('aria-selected', String(active));b.tabIndex=active?0:-1;});
-    $('#model-panel').setAttribute('aria-labelledby', 'tab-'+name);
-    $('#model-risk').textContent = d.status;
-    $('#model-risk').className = 'detail-status '+d.statusClass;
-    $('#model-count').textContent=d.num;$('#model-title').textContent=d.title;$('#model-description').textContent=d.description;
-    for (const key of ['docs','cautions']) {
-      const list = $('#model-'+key); list.replaceChildren();
-      d[key].forEach(t=>{const li=document.createElement('li');li.textContent=t;list.appendChild(li);});
-    }
-    $('#model-tip').textContent=d.tip;
-  }
-  modelBtns.forEach((b,index)=>{
-    b.addEventListener('click',()=>showModel(b.dataset.model));
-    b.addEventListener('keydown',e=>{
-      if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].includes(e.key))return;
-      e.preventDefault();let idx=index;if(e.key==='Home')idx=0;else if(e.key==='End')idx=modelBtns.length-1;else idx=(index+(e.key==='ArrowLeft'||e.key==='ArrowUp'?-1:1)+modelBtns.length)%modelBtns.length;
-      showModel(modelBtns[idx].dataset.model);modelBtns[idx].focus();
-    });
-  });
-
-  const pairs=[['revenue','revenue-range'],['us-cost','us-cost-range'],['hk-fee','hk-fee-range'],['hk-cost','hk-cost-range']];
-  const calcIds=['entity','revenue','us-cost','hk-fee','hk-cost','fx'];
-  const defaults={entity:'c-corp',revenue:1000000,'us-cost':800000,'hk-fee':80000,'hk-cost':50000,fx:7.8};
-  const results={};
-  function calc() {
-    const revenue=get('revenue'),usCost=get('us-cost'),hkFee=get('hk-fee'),hkCost=get('hk-cost'),fx=Math.max(.01,get('fx'));
-    const cCorp=$('#entity').value==='c-corp';
-    const usProfit=revenue-usCost-hkFee;
-    const hkProfit=hkFee-hkCost;
-    const usTax=cCorp?Math.max(0,usProfit)*.21:null;
-    const hkHkd=Math.max(0,hkProfit)*fx;
-    const hkTaxHkd=Math.min(2000000,hkHkd)*.0825+Math.max(0,hkHkd-2000000)*.165;
-    const hkTax=hkTaxHkd/fx;
-    const total=usTax===null?null:usTax+hkTax;
-    const reserve=usTax===null?null:usTax*1.15;
-    $('#us-profit').textContent=usd(usProfit);
-    $('#hk-profit').textContent=usd(hkProfit);
-    $('#us-tax').textContent=usTax===null?'联邦税需按 LLC 结构另行核算':'联邦税 '+usd(usTax);
-    $('#hk-tax').textContent='香港税 '+usd(hkTax);
-    $('#total-tax').textContent=total===null?'需个案核算':usd(total);
-    $('#total-subtitle').textContent=total===null?'LLC 穿透纳税结构无统一 21% 公司税率':'假设美国适用 C-Corp 税制，香港利润均属于应评税利润';
-    $('#reserve').textContent=reserve===null?'需个案核算':usd(reserve);
-    $('#reserve-desc').textContent=reserve===null?'请税务代理按实际所有者和税务分类计算':'预算参考，非美国税法规定的最低现金保留额';
-    const issues=[];
-    if(usProfit<0)issues.push('美国公司出现简化账面亏损，税法亏损处理需另算。');
-    if(hkProfit<0)issues.push('香港公司出现简化账面亏损，亏损结转及税务处理需另算。');
-    if(hkFee>0&&hkCost>hkFee)issues.push('香港服务成本超过服务收入，需核实业务持续性。');
-    if(usCost+hkFee>revenue)issues.push('美国成本费用高于净销售额，请核对输入。');
-    if(!cCorp)issues.push('LLC 的联邦纳税归属和应税所得须按具体股东、选举及 ECI 核定。');
-    $('#calc-warning').textContent=issues.length?issues.join(' '):'结果基于输入假设。州税、关税、海关估价、税收抵免、预提税及特定会计调整均未计入。';
-    Object.assign(results,{revenue,usCost,hkFee,hkCost,fx,cCorp,usProfit,hkProfit,usTax,hkTax,total,reserve});
-  }
-  for (const [textId,rangeId] of pairs){
-    const input=$('#'+textId),range=$('#'+rangeId);
-    input.addEventListener('input',()=>{const val=safe(Number(input.value));range.value=Math.min(Number(range.max),val);calc();});
-    range.addEventListener('input',()=>{input.value=range.value;calc();});
-  }
-  $('#entity').addEventListener('change',calc);
-  $('#fx').addEventListener('input',calc);
-  $('#tax-form').addEventListener('submit',e=>e.preventDefault());
-  $('#reset-calculator').addEventListener('click',()=>{
-    calcIds.forEach(id=>{$('#'+id).value=defaults[id]});
-    pairs.forEach(([input,range])=>{$('#'+range).value=defaults[input]});calc();
-  });
-  function summary(){
-    return [
-      '跨境账桥 BorderLedger · 美港税负测算摘要',
-      '日期：'+new Date().toLocaleDateString('zh-CN'),
-      '美国实体：'+(results.cCorp?'C-Corp / 选择按 C-Corp 纳税的 LLC':'LLC（需个案核算）'),
-      '美国店铺年度净销售收入：'+usd(results.revenue),
-      '美国其他成本与费用：'+usd(results.usCost),
-      '付香港公司真实服务费：'+usd(results.hkFee),
-      '香港公司服务成本：'+usd(results.hkCost),
-      '假设汇率：1 USD = '+results.fx.toFixed(2)+' HKD',
-      '美国简化应税利润：'+usd(results.usProfit),
-      '美国联邦所得税估算：'+(results.usTax===null?'需个案核算':usd(results.usTax)),
-      '香港简化应税利润：'+usd(results.hkProfit),
-      '香港利得税估算：'+usd(results.hkTax),
-      '两地估计所得税合计：'+(results.total===null?'需个案核算':usd(results.total)),
-      '美国税款预算留存参考（含自定 15% 缓冲）：'+(results.reserve===null?'需个案核算':usd(results.reserve)),
-      '',
-      '假设：香港服务费真实发生、可扣除；香港利润均需纳税且有资格享两级税率。州税、关税、预提税和特殊税务调整不在模型内。',
-      '本摘要仅供内部讨论，不是实际纳税申报或付款指令。',
-      '官方来源详见网站“官方来源”栏目。'
-    ].join('\n');
-  }
-  $('#export-case').addEventListener('click',()=>{
-    const blob=new Blob(['\ufeff'+summary()],{type:'text/plain;charset=utf-8'});
-    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='US-HK-tax-scenario.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),500);
-  });
-  $('#copy-case').addEventListener('click',async()=>{
-    const button=$('#copy-case');const original=button.textContent;
-    try{
-      if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(summary());}
-      else {const t=document.createElement('textarea');t.value=summary();document.body.appendChild(t);t.select();if(!document.execCommand('copy'))throw new Error('Copy denied');t.remove();}
-      button.textContent='✓ 已复制';
-    }catch(e){button.textContent='复制失败，请使用导出';}
-    setTimeout(()=>button.textContent=original,2200);
-  });
-  $('#print-page').addEventListener('click',()=>window.print());
-
-  const checkboxes=$$('input[type="checkbox"][data-check]');
-  let saved={};
-  try{saved=JSON.parse(localStorage.getItem('borderledger-checks-v1')||localStorage.getItem('commerce-bridge-checks-v1')||'{}')||{};}catch(e){saved={};}
-  checkboxes.forEach(input=>{
-    input.checked=Boolean(saved[input.dataset.check]);
-    input.addEventListener('change',()=>{saved[input.dataset.check]=input.checked;try{localStorage.setItem('borderledger-checks-v1',JSON.stringify(saved));}catch(e){}drawProgress();});
-  });
-  function drawProgress(){
-    const n=checkboxes.filter(i=>i.checked).length;
-    $('#progress-text').textContent=n+' / '+checkboxes.length;
-    $('#progress-bar').style.width=(n/checkboxes.length*100)+'%';
-    $('#progress-note').textContent=n===0?'从账户和合同开始，先把基础材料理顺。':n===checkboxes.length?'基础材料全部勾选。请税务顾问复核实际执行情况。':'已完成 '+n+' 项；建议按业务实质补齐剩余材料。';
-  }
-  $('#clear-checklist').addEventListener('click',()=>{checkboxes.forEach(i=>i.checked=false);saved={};try{localStorage.removeItem('borderledger-checks-v1');localStorage.removeItem('commerce-bridge-checks-v1');}catch(e){}drawProgress();});
-  drawProgress();calc();
-
-  if('IntersectionObserver' in window){
-    const sections=$$('main section[id]');const links=$$('.side-nav a');
-    const observer=new IntersectionObserver(entries=>{
-      entries.filter(e=>e.isIntersecting).forEach(e=>links.forEach(link=>link.classList.toggle('active',link.hash==='#'+e.target.id)));
-    },{rootMargin:'-12% 0px -68% 0px',threshold:0});
-    sections.forEach(s=>observer.observe(s));
-  }
+(function(){
+var routes={
+ zyla:{badge:"官方有公开指引",code:"A / ZYLA / US",title:"美国公司 → 自身 Zyla 收款账户",desc:"美国公司以真实销售方身份运营 TikTok Shop US，使用自身登记的 Zyla USD 收款账户接收平台结算。",target:"Zyla / 美国公司",hint:"企业开户名与平台出款信息核验",warning:"Zyla 服务条款要求账户服务于登记客户自身经营；需核对美国经营州、行业、企业实名及平台 ACH 规则。"},
+ wf:{badge:"需书面核准",code:"B / WORLDFIRST / HK",title:"香港 WorldFirst 收款账号配置美国店铺持有人",desc:"万里汇公开文件支持修改收款账号的店铺持有人；但独立香港公司作为账户主客户、独立美国公司作为 TikTok US 店铺销售方这一组合，不能仅凭持有人设置视为已获平台和服务商准入。",target:"香港 WorldFirst（条件性）",hint:"美国开店主体持有人字段需另审",warning:"关键前置：由万里汇和 TikTok Shop US 分别书面确认账户对应关系、出款受益人、代收安排和资金法律归属。未经批准不得切换。"},
+ bank:{badge:"传统同名结算",code:"C / ACH / US BANK",title:"美国公司 → 自身美国银行 ACH 账户",desc:"由美国开店公司使用同名企业银行账户收款，再根据真实供货、服务或其他商业交易向香港合作公司付款。",target:"美国公司名下银行",hint:"银行受益人与店铺注册公司匹配",warning:"此路径不需要把香港公司设置为 TikTok 的结算受益人；向香港公司付款仍须保留合法交易依据。"}
+};
+function text(id,s){document.getElementById(id).textContent=s}
+document.querySelectorAll("[data-settle]").forEach(function(b){b.addEventListener("click",function(){
+ var d=routes[b.getAttribute("data-settle")];if(!d)return;
+ document.querySelectorAll("[data-settle]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+ text("settle-status",d.badge);text("settle-code",d.code);text("settle-title",d.title);
+ text("settle-desc",d.desc);text("settle-target",d.target);text("settle-target-note",d.hint);text("settle-warning",d.warning);
+ document.getElementById("settle-status").className=d.code.startsWith("B")?"badge amber":"badge";
+})});
+document.querySelectorAll('input[name="ka-direction"]').forEach(function(r){r.addEventListener("change",function(){
+ var us=r.value==="us-hk";if(!r.checked)return;
+ text("ka-direction-label",us?"KA / US → HK / SINGLE ROUTE":"KA / HK → US / SINGLE ROUTE");
+ text("ka-arrow",us?"→":"←");
+ text("ka-caption",us?"美国公司作为付款方，向独立香港公司支付已确认的合同货款或服务费用。":"香港公司作为付款方，向独立美国公司支付真实业务对价、偿付有依据的债务或其他经批准款项。");
+ text("ka-accounting",us?"US：结清应付款 ｜ HK：确认对应销售或服务应收款":"HK：核销真实应付款 ｜ US：按交易性质记录应收款或负债清偿");
+})});
+var usd=function(n){return "$"+Math.round(n).toLocaleString("en-US")};
+var fields=["sales","uscost","hkfee","hkcost"];
+function calc(){
+ var vals={};fields.forEach(function(id){vals[id]=Number(document.getElementById(id).value);text(id+"-val",usd(vals[id]))});
+ var us=vals.sales-vals.uscost-vals.hkfee,hk=vals.hkfee-vals.hkcost;
+ var usTax=Math.max(0,us)*.21;
+ var hkd=Math.max(0,hk)*7.8;
+ var hkTaxHKD=Math.min(hkd,2000000)*.0825+Math.max(0,hkd-2000000)*.165;
+ var hkTax=hkTaxHKD/7.8;
+ text("us-profit",usd(us));text("hk-profit",usd(hk));text("us-tax",usd(usTax));text("hk-tax",usd(hkTax));text("total-tax",usd(usTax+hkTax));
+}
+fields.forEach(function(id){document.getElementById(id).addEventListener("input",calc)});calc();
+var key="borderledger-check-v21";var checks=Array.from(document.querySelectorAll("#check-items input[type=checkbox]"));
+try{var saved=JSON.parse(localStorage.getItem(key)||"[]");checks.forEach(function(x,i){x.checked=Boolean(saved[i])})}catch(e){}
+function progress(){var count=checks.filter(function(x){return x.checked}).length;text("check-note",count+" / "+checks.length+" 完成");document.getElementById("bar-fill").style.width=(count/checks.length*100)+"%";document.getElementById("check-progress").setAttribute("aria-valuenow",String(count));
+ try{localStorage.setItem(key,JSON.stringify(checks.map(function(x){return x.checked})))}catch(e){}
+}
+checks.forEach(function(x){x.addEventListener("change",progress)});document.getElementById("reset-check").addEventListener("click",function(){checks.forEach(function(x){x.checked=false});progress()});progress();
 })();
-
 </script>
 </body>
 </html>
